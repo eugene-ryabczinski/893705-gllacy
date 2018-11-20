@@ -8,7 +8,7 @@
 	<header class="main-header">
 		<nav class="main-navigation">
 			<a class="main-header-logo">
-				<img src="logo.png" alt="">
+				<img src="img/logo.svg" width="154" height="64" alt="Логотип Глейси">
 			</a>
 			<ul class="site-navigation">
 				<li><a href="#">Каталог</a></li>
@@ -16,74 +16,132 @@
 				<li><a href="#">О Компании</a></li>
 			</ul>
 			<ul class="user-block">
-				<li><a href="#" class="search">Поиск</a></li>
-				<li><a href="#" class="login">Вход</a></li>
-				<li><a href="#" class="cart-empty">Корзина</a></li>
+				<li><button class="button button-search">Поиск</button></li>
+				<li><button class="button button-login">Вход</button></li>
+				<li><button class="button button-cart-empty">Корзина</button></li>
 			</ul>
 		</nav>
 		
 		<section class="contact-us">
-			<h2 class="visually-hidden">Свяжитесь с нами</h2>
+			<!-- <h2 class="visually-hidden">Свяжитесь с нами</h2> -->
 			<span>С 10 до 20, ежедневно</span>
-			<p>8 812 450-25-25</p>
+			<a href="tel:8-812-450-25-25">8 812 450-25-25</a>
 		</section>
 	</header>
 	
 	<main class="main-content"> 
 		<section class="slider">
-			<h2 class="visually-hidden">Галерея</h2>
-			<div class="slides">	  
-				<img src="http://placehold.it/150x100" alt="">  
-				<h3>
-					<a>Крем-брюле и пломбир с малиновым джемом</a>
-				</h3>
-				<!-- Добавить остальные слайды-->
+			<!-- <h2 class="visually-hidden">Галерея</h2> -->
+			<div class="slide-list">
+				<div class="slide-item">  
+					<img src="http://placehold.it/150x100" alt="Картинка с мороженым">  
+					<h3>
+						Крем-брюле и пломбир с малиновым джемом
+					</h3>
+					<a class="button button-buy" href="">Давайте оба</a>
+				</div>
+				<div class="slide-item">  
+					<img src="http://placehold.it/150x100" alt="Картинка с мороженым">  
+					<h3>
+						Шоколадный пломбир и лимонный сорбет
+					</h3>
+					<a class="button button-buy" href="">Давайте оба</a>
+				</div>	
+				<div class="slide-item">  
+					<img src="http://placehold.it/150x100" alt="Картинка с мороженым">  
+					<h3>
+						Шоколадный пломбир и лимонный сорбет
+					</h3>
+					<a class="button button-buy" href="">Давайте оба</a>
+				</div>		
 			</div>	
-			<a class="button button-buy" href="">Давайте оба</a>
-			<span class="slider-toggle"></span>
-			<span class="slider-toggle"></span>
-			<span class="slider-toggle"></span>
+			<div class="slider-controls">
+				<span class="slider-toggle"></span>
+				<span class="slider-toggle"></span>
+				<span class="slider-toggle"></span>
+			</div>
 		</section>
 		  		  
-		<section class="promo"> <!-- подходит назван. класса? -->
-			<h2 class="visually-hidden">Промо</h2>
-			<ul class="promo-list">
-				<li class="promo-item">
-					<h3>Малинка даром</h3>
-					<p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+		<section class="offers"> 
+			<!-- <h2 class="visually-hidden">Предложения</h2> -->
+			<ul class="offers-list">
+				<li class="offers-item">
+					<h3 class="offer-title">Малинка даром</h3>
+					<p class="offer-description">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
 					<a class="button" href="#">Хочу варенье!</a>	
-					<img src="http://placehold.it/150x100" alt=""> <!-- Контентное или bg? -->
 				</li>
-				<li class="promo-item">
-					<h3>Шоколадки даром</h3>
-					<p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-					<a class="button" href="#">Хочу шоколадки!</a>	
-					<img src="http://placehold.it/150x100" alt="">
+				<li class="offers-item">
+					<h3 class="offer-title">Шоколадки даром</h3>
+					<p class="offer-description">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+					<a class="button" href="#">Хочу шоколадки!</a>
 				</li>  	
 			</ul>		  
 		</section>
 		  
 		<section class="popular-products">
-			<h2 class="visually-hidden">Популярное мороженное</h2>
+			<!-- <h2 class="visually-hidden">Популярное мороженное</h2> -->
 			<ul class="product-list">
-				<li class="product-item">
-					<p class="product-item-image"> <!-- стоит обернуть в p? -->
+				<li class="product-item product-item-hit">
+					<p class="product-image">
 						<a href="#">
-							<img src="product-photo" alt="">
+							<img src="img/product-1.png" width="267" height="267" alt="Картинка с мороженым">
 						</a>
-					<p>
-					<p class="product-item-price">
-						<b>130 Р</b><span>/кг</span>
+					</p>
+					<p class="product-price">
+						130 Р<span>/кг</span>
 					</p>	
-					<h3 class="product-item-title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
-					<a class="button" href="">Быстрый просмотр</a> 
+					<h3 class="product-title">
+						<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+					</h3>
+					<button class="button">Быстрый просмотр</button>
 				</li>
-				<!-- Добавить ост. товары -->
+				<li class="product-item product-item-hit">
+					<p class="product-image"> 
+						<a href="#">
+							<img src="img/product-2.png" width="267" height="267" alt="Картинка с мороженым">
+						</a>
+					</p>
+					<p class="product-price">
+						130 Р<span>/кг</span>
+					</p>	
+					<h3 class="product-title">
+						<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+					</h3>
+					<button class="button">Быстрый просмотр</button>
+				</li>
+				<li class="product-item product-item-hit">
+					<p class="product-image"> 
+						<a href="#">
+							<img src="img/product-3.png" width="267" height="267" alt="Картинка с мороженым">
+						</a>
+					</p>
+					<p class="product-price">
+						130 Р<span>/кг</span>
+					</p>	
+					<h3 class="product-title">
+						<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+					</h3>
+					<button class="button">Быстрый просмотр</button>
+				</li>
+				<li class="product-item product-item-hit">
+					<p class="product-image"> 
+						<a href="#">
+							<img src="img/product-4.png" width="267" height="267" alt="Картинка с мороженым">
+						</a>
+					</p>
+					<p class="product-price">
+						130 Р<span>/кг</span>
+					</p>	
+					<h3 class="product-title">
+						<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+					</h3>
+					<button class="button">Быстрый просмотр</button>
+				</li>
 			</ul>
 		</section>
 		  
 		<section class="features">
-			<h2>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
+			<h2 class="features-title">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
 			<ul class="features-list">
 				<li class="feature-item">
 					<p>Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</p>
@@ -100,12 +158,11 @@
 			</ul>
 		</section>
 		
-		<section class="blog"> <!-- нужна эта обёртка? -->
-			<h2 class="visually-hidden">Блог</h2>
+		<section class="blog">
+			<!-- <h2 class="visually-hidden">Блог</h2> -->
 			<article class="blog-entry">
 				<span>Новое в нашем блоге</span>
-				<h3>10 способов сервировки фруктовых щербетов к столу</h3>
-				<img src="http://placehold.it/150x100" alt="">
+				<h3 class="blog-title">10 способов сервировки фруктовых щербетов к столу</h3>
 			</article>
 		</section>
 		
@@ -113,17 +170,17 @@
 			<h2 class="visually-hidden">Рассылка</h2>
 			<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
 			<!-- Форма -->
-			<a class="button" href="#">Отправить</a>
+			<button class="button">Отправить</button>
 		</section>
 		
 		<section class="contacts">	
-			<h2 class="visually-hidden">Контакты</h2>	
-			<img src="map.jpg" alt=""> <!-- карта -->
+			<!-- <h2 class="visually-hidden">Контакты</h2>	 -->
+			<img src="map.jpg" alt="ул. Большая Конюшенная 19/8, г.Санкт-Петербург"> <!-- карта -->
 			<section class="adress">
 				<p>Адрес главного офиса <br>и офлайн-магазина:</p>
 				<b>ул. Большая Конюшенная <br>19/8, Санкт-Петербург</b>
 				<p>Для заказов по телефону:</p>
-				<b>8 812 450-25-25</b>
+				<a href="tel:8-812-450-25-25">8 812 450-25-25</a>
 				<span>(с 10 до 20 ежедневно)</span>
 				<a class="button" href="#">Форма обратной связи</a>
 			</section>
@@ -138,7 +195,7 @@
 			<li><a class="social-button" href="#">Вконтакте</a></li>
 		</ul>
 		
-		<ul class="footer-more-info">
+		<ul class="footer-links">
 			<li><a href="#">Для поставщиков</a></li>
 			<li><a href="#">О производстве</a></li>
 			<li><a href="#">Наши документы</a></li>
@@ -146,7 +203,9 @@
 		</ul>
 			
 		<p class="footer-credits">
-			<img src="http://placehold.it/10x10" alt="">
+			<a href="http://htmlacademy.ru">
+				<img src="img/html-academy-logo.svg" width="108" height="39" alt="Сайт HTML Academy">
+			</a>	
 			<span>Сделано в HTML Academy © 2017</span>
 		</p>
 	</footer>
