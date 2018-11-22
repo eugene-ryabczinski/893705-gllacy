@@ -209,5 +209,50 @@
 			<span>Сделано в HTML Academy © 2017</span>
 		</p>
 	</footer>
+	
+	<section class="modal modal-login">
+		<h2 class="visually-hidden">Форма входа</h2>
+		<form action="#" method="post">
+			<p>
+				<label class="visually-hidden" for="user-login">Логин</label>
+				<input type="text" id="user-login" name="login" placeholder="Логин">
+			</p>
+			<p>
+				<label class="visually-hidden" for="user-password">Пароль</label>
+				<input type="text" id="user-password" name="password" placeholder="Пароль">
+			</p>
+			<p class="login-options"> <!-- класс? -->
+				<a href="#">Забыли пароль?</a>
+				<a href="#">Новая регистрация</a>
+			</p>
+			<button class="button button-login" type="submit">Войти</button> <!-- такую кнопку проще стилизовать чем input? -->
+		</form> 
+	</section>
+	
+	<section class="modal modal-search">
+		<form action="#" method="post">
+			<input type="search" placeholder="Что ищем?">
+		</form>
+	</section>
+	
+	<section class="modal modal-feedback">
+		<h2>Мы обязательно вам ответим!</h2>
+		<form action="#" method="post">
+			<p>
+				<label class="visually-hidden" for="user-name">Имя</label>
+				<input type="text" id="user-name" name="login" placeholder="Как вас зовут?">
+			</p>
+			<p>
+				<label class="visually-hidden" for="user-email">Почта</label>
+				<input type="email" id="user-email" name="email" placeholder="Ваша почта для ответа">
+			</p>
+			<p>
+				<label class="visually-hidden" for="user-comment">Комментарий</label>
+				<textarea name="comment" id="user-comment" rows="7" placeholder="Напишите что-нибудь..."></textarea>
+			</p>
+			<button class="button" type="submit">Отправить</button> 
+			<button class="button button-close">Закрыть</button>
+		</form>
+	</section>
 </body>
 </html>
