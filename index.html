@@ -24,9 +24,60 @@
 				<li><a href="#">О Компании</a></li>
 			</ul>
 			<ul class="user-block">
-				<li><button class="button button-search">Поиск</button></li>
-				<li><button class="button button-login">Вход</button></li>
-				<li><button class="button button-cart-empty">Корзина</button></li>
+				<li><button class="button button-search">Поиск</button>
+					<div class="search"> <!-- может дать класс вроде search-panel search-window search-popup -->
+						<form action="#" method="post">
+							<input type="search" placeholder="Что ищем?">
+						</form>
+					</div> 
+				</li>
+				<li><button class="button button-login">Вход</button>
+					<div class="login"> 
+						<form action="#" method="post">
+							<p>
+								<label class="visually-hidden" for="user-email">Электронная почта</label>
+								<input type="email" id="user-email" name="email" placeholder="Электронная почта">
+							</p>
+							<p>
+								<label class="visually-hidden" for="user-password">Пароль</label>
+								<input type="password" id="user-password" name="password" placeholder="Пароль">
+							</p>
+							<div class="login-controls">
+								<button class="button button-login" type="submit">Войти</button>
+								<p class="login-options"> 
+									<a href="#">Забыли пароль?</a>
+									<a href="#">Новая регистрация</a>
+								</p>
+							</div>
+						</form> 
+					</div>				
+				</li>
+				<li><button class="button button-cart-empty">Корзина</button>								
+					<div class="cart">
+						<ul class="cart-list"> 
+							<li class="cart-item">
+								<button class="button-remove" aria-label="Удалить товар"></button>
+								<p class="cart-item-photo">
+									<img src="img/product-1.png" width="33" height="33" alt="Картинка с мороженым">
+								</p>
+								<p class="cart-item-title">
+									Пломбир с апельсиновым джемом
+								</p>
+								<p class="cart-item-amount">
+									1,5кг x <span>200<span>
+								</p>
+								<p class="cart-item-price">
+									300 руб
+								</p>
+							</li>
+							<!-- Добавь остальные товары -->
+						</ul>
+						<p class="total-price">
+							Итого:750 руб.
+						</p>
+						<a href="#" class="button button-buy">Оформить заказ</a>
+					</div>		
+				</li>
 			</ul>
 		</nav>
 		
@@ -35,8 +86,8 @@
 			<span>С 10 до 20, ежедневно</span>
 			<a href="tel:8-812-450-25-25">8 812 450-25-25</a>
 		</section>
-	</header>
 	
+	</header>
 	<main class="main-content"> 
 		<section class="slider">
 			<!-- <h2 class="visually-hidden">Галерея</h2> -->
@@ -197,10 +248,10 @@
 	
 	<footer class="main-footer">
 		<ul class="footer-social">
-			<li><a class="social-button" href="#">Твиттер</a></li>
-			<li><a class="social-button" href="#">Инстаграм</a></li>
-			<li><a class="social-button" href="#">Фейсбук</a></li>
-			<li><a class="social-button" href="#">Вконтакте</a></li>
+			<li><a class="social-button" href="#" aria-label="Твиттер"></a></li>
+			<li><a class="social-button" href="#" aria-label="Инстаграм"></a></li>
+			<li><a class="social-button" href="#" aria-label="Фейсбук"></a></li>
+			<li><a class="social-button" href="#" aria-label="Вконтакте"></a></li>
 		</ul>
 		
 		<ul class="footer-links">
@@ -218,38 +269,13 @@
 		</p>
 	</footer>
 	
-	<section class="modal modal-login">
-		<!-- <h2 class="visually-hidden">Форма входа</h2> -->
-		<form action="#" method="post">
-			<p>
-				<label class="visually-hidden" for="user-login">Логин</label>
-				<input type="text" id="user-login" name="login" placeholder="Логин">
-			</p>
-			<p>
-				<label class="visually-hidden" for="user-password">Пароль</label>
-				<input type="text" id="user-password" name="password" placeholder="Пароль">
-			</p>
-			<p class="login-options"> <!-- класс? -->
-				<a href="#">Забыли пароль?</a>
-				<a href="#">Новая регистрация</a>
-			</p>
-			<button class="button button-login" type="submit">Войти</button> <!-- такую кнопку проще стилизовать чем input? -->
-		</form> 
-	</section>
-	
-	<section class="modal modal-search">
-		<!-- <h2 class="visually-hidden">Поиск</h2>	-->
-		<form action="#" method="post">
-			<input type="search" placeholder="Что ищем?">
-		</form>
-	</section>
-	
 	<section class="modal modal-feedback">
 		<h2>Мы обязательно вам ответим!</h2>
+		<button class="button-close" aria-label="Закрыть"></button>
 		<form action="#" method="post">
 			<p>
 				<label class="visually-hidden" for="user-name">Имя</label>
-				<input type="text" id="user-name" name="login" placeholder="Как вас зовут?">
+				<input type="text" id="user-name" name="name" placeholder="Как вас зовут?">
 			</p>
 			<p>
 				<label class="visually-hidden" for="user-email">Почта</label>
@@ -260,7 +286,6 @@
 				<textarea name="comment" id="user-comment" rows="7" placeholder="Напишите что-нибудь..."></textarea>
 			</p>
 			<button class="button" type="submit">Отправить</button> 
-			<button class="button button-close">Закрыть</button>
 		</form>
 	</section>
 </body>
