@@ -1,0 +1,395 @@
+@font-face {
+	font-family: Roboto-regular;
+	src: ('../fonts/web/roboto.woff');
+}
+
+@font-face {
+	font-family: Roboto-medium;
+	src: ('../fonts/web/robotobold.woff');
+}
+
+@font-face {
+	font-family: Roboto-bold;
+	src: ('../fonts/web/robotomedium.woff');
+}
+
+body {
+	margin: 0;
+	
+	/* Пока штатный шрифт такой */	
+	font-family: Roboto-regular;
+	font-size: 16px;
+	line-height: 22px;
+	color: white; 
+
+	background-color: #849d8f;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* обнулть list-style в хедере у весх списков в одном месте? */
+.site-navigation,
+.catalog-list,
+.user-block,
+.offers-list {
+	list-style: none;
+}
+
+/* Временно добавил чтобы меню не наползало */
+.site-navigation li {
+	display: inline-block;
+}
+
+.site-navigation a {
+	font-family: Roboto-bold;
+	font-size: 16px;
+	line-height: 18px;
+	color: white;
+	
+/* 	border-bottom: 1px solid rgba(255,255,255,0.2); */
+	text-decoration: underline;
+	padding: 8px 13px;
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus
+ {
+	border-radius: 50px;
+	background-color:#f8f7f4;
+	color: #323232; 
+	text-decoration: none;
+/* 	border-radius: 15px; */
+}
+
+.site-navigation a:active {
+	box-shadow: inset 0px 2px 1px 0px #696969;
+}
+
+/* сомневаюсь что стилизовать так. в демках этот вопрос пока не рассмотрен */
+.site-navigation-current a {
+	background-color: #d07058;
+	border-radius: 50px;
+	text-decoration: none;
+}
+
+.contact-us {
+	font-family: Roboto-bold; /* вынес стиль в общий блок */
+}
+
+.contact-us span {
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.contact-us a {
+	font-size: 22px;
+	line-height: 24px;
+	color:white;
+	22 24
+}
+
+
+
+.breadcrumbs {
+	list-style: none;
+	font-size: 14px;
+	line-height: 16px;
+/* 	добавил стиль сюда т.к внутри есть элемент без обёртки a */
+}
+
+.breadcrumbs a {
+	text-decoration: underline;
+	color: white;
+}
+
+
+
+.catalog-list {
+	background-color: #f8f7f4;
+	display: none;
+}
+
+.catalog-list a {
+	font-family: Roboto-regular;
+	font-size: 14px;
+	line-height: 16px;
+	color: #323232;
+}
+
+/* каскад м.б. урбать */
+/* тут допиши комменарй */
+/* селектор .catalog-new-items {color:red} не сработал. потому что его перебивал более специфичный .catalog-list a? */
+.catalog-new-items a {
+	font-family: Roboto-bold;
+}
+
+.catalog-list a:hover,
+.catalog-list a:focus {
+	background-color: #fbded7;
+}
+
+.catalog-list a:active {
+	background-color: #f6b5a5;
+}
+
+.catalog-list-active {
+	background-color: #d07058;
+}
+
+/* времено скрыл чтобы не мешались */
+.search, .login, .cart {
+	display: none;
+}
+
+
+
+.button {
+	padding: 8px 15px;
+	
+	border: none;
+	background-color: #9fb3a8;
+/* 	border-radius: 16px; такой border-radius в макете */
+/* 	задать border radius с запасом, для кнопок c большим размером текста? */
+	border-radius: 50px;
+
+	font-size: 14px;
+	line-height: 16px;
+	color: white;
+}
+
+
+.button:hover,
+.button:focus
+ {
+	color: #323232;
+	background-color:#f8f7f4;
+}
+
+.slider .button {
+	font-size: 32px;
+	line-height: 44px;
+	padding: 15px 40px;
+	font-family: Roboto-bold;
+}
+
+.button-orange {
+	font-size: 18px;
+	line-height: 24px;
+	
+	background-image: linear-gradient(#f26843, #e74a35);
+	box-shadow: 0px 2px 1px 0px rgba(172, 16, 0, 0.64);
+	text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+}
+
+.button-orange:hover,
+.button-orange:focus
+ {
+	background-image: linear-gradient(#f58669, #ec6f5e);
+	color: white;
+}
+
+.button-orange:active {
+	color: white;
+
+	background-image: linear-gradient(to top, #f26843, #e74a35);
+	box-shadow: inset 0px 2px 1px 0px rgba(172, 16, 0, 0.64);
+}
+
+/*
+.slider .button-buy {
+	font-size: 32px;
+	line-height: 44px;
+	border-radius: 30px;
+}
+*/
+
+
+
+.slider-title {
+	font-size: 60px;
+	line-height: 61px;
+	color: white; 
+	text-align: center;	
+}
+
+
+
+/* тут часто повторяется font-family: Roboto-bold. вынести это св-во в контейнер? и переопределить у элемента если нужно*/
+.offer-title {
+	font-family: Roboto-bold;
+	font-size: 35px;
+	line-height: 41px;
+}
+
+.offer-description {
+	font-family: Roboto-bold;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.offer-chocolate {
+	background-image: url('../img/background-chocolate.jpg');
+	background-repeat: no-repeat;
+}
+
+.offer-raspberry {
+	background-image: url('../img/background-raspberry.jpg');
+	background-repeat: no-repeat;	
+}
+
+
+
+.product-list {
+	list-style: none;
+}
+
+.product-image img {
+	border-radius: 200px; /* можно брать с запасом ? */
+}
+
+.product-price {
+	font-size: 45px;
+	line-height: 60px;	
+	font-family: Roboto-bold;
+}
+
+.product-price span {
+	font-size: 34px;
+	line-height: 45px;
+}
+
+.product-title a {
+	font-size: 16px;
+	line-height: 22px;
+	color: white;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);	
+}
+/* .product-title не срабатывает. нужно обязательно добавить a. что то перебивает стиль .product-title. цвет не наследуется ?*/
+
+
+
+.features {
+	background-image: url('../img/background-waffle.jpg');
+	background-repeat: repeat;
+	color: #323232;
+}
+
+.features-title {
+	font-size: 24px;
+	line-height: 30px;
+	font-family: Roboto-medium;
+}
+
+.features-list {
+	list-style: none;	
+}
+
+.feature-item p {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+
+
+.blog {
+	background-color: white;
+}
+
+.blog-entry {
+	background: url('../img/background-strawberry.jpg') no-repeat;
+}
+
+.blog-entry span {
+	font-size: 16px;
+	line-height: 22px;
+	color: #323232;
+}
+
+.blog-title a {
+	font-size: 24px;
+	line-height: 30px;
+	font-family: Roboto-bold;
+	text-decoration: underline;
+	color: #323232;
+}
+
+
+
+.mailing {
+	background-color: #f8f7f4;
+}
+
+.mailing p {
+	font-size: 16px;
+	line-height: 22px;
+	color: #5a5a5a;
+}
+
+.mailing input {
+	font-size: 16px;
+	line-height: 24px;
+	color: 999999;
+}
+
+.mailing button {
+	font-size: 18px;
+	line-height: 24px;
+	font-family: Roboto-bold;
+}
+
+
+
+.adress {
+	background-color: white;
+	color: #323232;	/* задать цвет текста контейнеру? */
+}
+
+.adress p,
+.adress span {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.adress b,
+.adress a {
+	font-size: 18px;
+	line-height: 24px;
+	font-family: Roboto-bold;
+}
+
+.adress a {
+	color: #323232;
+}
+
+
+
+.footer-social,
+.footer-links {
+	list-style: none;
+}
+
+.footer-links a {
+	font-size: 13px;
+	line-height: 16px;
+	color: white;	
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.link-suppliers { 
+	font-family: Roboto-bold;
+}
+
+.footer-credits span {
+	font-size: 12px;
+	line-height: 18px;
+	12 18
+}
+
+
+
+.modal {
+	display: none;
+}
