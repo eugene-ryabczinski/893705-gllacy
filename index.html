@@ -6,14 +6,14 @@
 	<link href="css/normalize.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="container">
 	<header class="main-header">
 		<nav class="main-navigation">
 			<a class="main-header-logo">
 				<img src="img/logo.svg" width="154" height="64" alt="Логотип Глейси">
 			</a>
 			<ul class="site-navigation">
-				<li><a href="catalog.html"><span class="text-underline">Каталог</span></a>
+				<li><a href="catalog.html"><span class="link-underline">Каталог</span></a>
 					<ul class="catalog-list">
 						<li class="catalog-new-items"><a href="#">Новинки</a></li>
 						<li><a href="#">Сливочное</a></li>
@@ -22,8 +22,8 @@
 						<li><a href="#">Мелорин</a></li>
 					</ul>				
 				</li>
-				<li><a href="#"><span class="text-underline">Доставка и оплата</span></a></li>
-				<li><a href="#"><span class="text-underline">О Компании</span></a></li>
+				<li><a href="#"><span class="link-underline">Доставка и оплата</span></a></li>
+				<li><a href="#"><span class="link-underline">О Компании</span></a></li>
 			</ul>
 			<ul class="user-block">
 				<li><button class="button button-search">Поиск</button>
@@ -165,7 +165,7 @@
 					<p class="product-price">
 						130 Р<span>/кг</span>
 					</p>	
-					<h3 class="product-title" class="text-underline">
+					<h3 class="product-title" class="link-underline">
 						<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
 					</h3>
 					<button class="button button-medium button-accent">Быстрый просмотр</button>
@@ -200,7 +200,8 @@
 				</li>
 			</ul>
 		</section>
-		  
+		
+		    
 		<section class="features">
 			<h2 class="features-title">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
 			<ul class="features-list">
@@ -219,38 +220,41 @@
 			</ul>
 		</section>
 		
-		<section class="blog">
-			<!-- <h2 class="visually-hidden">Блог</h2> -->
+		<div class="row-container">
+			<section class="blog">
+				<!-- <h2 class="visually-hidden">Блог</h2> -->
+				<article class="blog-entry">
+					<span>Новое в нашем блоге</span>
+					<h3 class="blog-title"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h3>
+				</article>
+			</section>
 			
-			<article class="blog-entry">
-				<span>Новое в нашем блоге</span>
-				<h3 class="blog-title"><a href="#">10 способов сервировки фруктовых щербетов к столу</a></h3>
-			</article>
-		</section>
-		
-		<section class="mailing">
-			<!-- <h2 class="visually-hidden">Рассылка</h2> -->
-			<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-			<form action="#" method="post">
-				<p>
-					<label class="visually-hidden" for="user-email">Электронная почта</label>
-					<input type="email" id="user-email" name="email" placeholder="Электронная почта">
-				</p>
-				<button class="button button-medium button-accent" type="submit">Отправить</button>
-			</form> 
-
-
-		</section>
+			<section class="mailing">
+				<!-- <h2 class="visually-hidden">Рассылка</h2> -->
+				<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+				<form action="#" method="post">
+					<p>
+						<label class="visually-hidden" for="user-email">Электронная почта</label>
+						<input type="email" id="user-email" name="email" placeholder="Электронная почта">
+					</p>
+					<button class="button button-medium button-accent" type="submit">Отправить</button>
+				</form>
+			</section>	
+		</div> 
 		
 		<section class="contacts">	
 			<!-- <h2 class="visually-hidden">Контакты</h2>	 -->
 			<img src="map.jpg" alt="ул. Большая Конюшенная 19/8, г.Санкт-Петербург"> <!-- карта -->
-			<section class="adress">
-				<p>Адрес главного офиса <br>и офлайн-магазина:</p>
-				<b>ул. Большая Конюшенная <br>19/8, Санкт-Петербург</b>
-				<p>Для заказов по телефону:</p>
-				<a href="tel:8-812-450-25-25">8 812 450-25-25</a>
-				<span>(с 10 до 20 ежедневно)</span>
+			<section class="addres">
+				<p class="addres-section">
+					Адрес главного офиса <br>и офлайн-магазина:
+					<b class="adress-accent">ул. Большая Конюшенная <br>19/8, Санкт-Петербург</b>		
+				</p>
+				<p class="addres-section">
+					Для заказов по телефону:
+					<a class="addres-accent" href="tel:8-812-450-25-25">8 812 450-25-25</a>
+					(с 10 до 20 ежедневно)
+				</p>
 				<button class="button button-medium button-accent">Форма обратной связи</button>
 			</section>
 		</section>
@@ -271,12 +275,12 @@
 			<li><a href="#">Экологические стандарты</a></li>
 		</ul>
 			
-		<p class="footer-credits">
+		<div class="footer-credits">
 			<a href="http://htmlacademy.ru">
 				<img src="img/html-academy-logo.svg" width="108" height="39" alt="Сайт HTML Academy">
 			</a>	
-			<span>Сделано в HTML Academy © 2017</span>
-		</p>
+			<p>Сделано в <span class="link-underline">HTML Academy</span> © 2017</p>
+		</div>
 	</footer>
 	
 	<section class="modal modal-feedback">

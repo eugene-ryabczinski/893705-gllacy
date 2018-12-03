@@ -22,7 +22,6 @@
 body {
 	margin: 0;
 	
-	/* Пока штатный шрифт такой */	
 	font-family: Roboto, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 22px;
@@ -31,19 +30,41 @@ body {
 	background-color: #849d8f;
 }
 
+
+
+.container {
+	width: 1146px;
+	padding: 9px 27px;
+}
+
+
+
 a {
 	text-decoration: none; 
 	color: inherit;
 }
+
+.main-header-logo {
+	margin-right: 10px;
+}
+
+.main-navigation {
+	display: flex;	
+	align-items: center;
+}
+
 
 
 .site-navigation,
 .catalog-list,
 .user-block {
 	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-/* Временно добавил чтобы меню не наползало */
+
+
 .site-navigation > li {
 	display: inline-block;	
 }
@@ -54,13 +75,12 @@ a {
 	line-height: 18px;
 	color: white;
 	position: relative;
-/* 	border-bottom: 1px solid rgba(255,255,255,0.2); */
 	padding: 8px 13px;
+	display: block;
 }
 
 .site-navigation > li > a:hover,
-.site-navigation > li > a:focus
- {
+.site-navigation > li > a:focus {
 	border-radius: 50px;
 	background-color:#f8f7f4;
 	color: #323232; 
@@ -72,24 +92,22 @@ a {
 	box-shadow: inset 0px 2px 1px 0px #696969;
 }
 
-/* сомневаюсь что стилизовать так. в демках этот вопрос пока не рассмотрен */
 .site-navigation-current > a {
 	background-color: #d07058;
 	border-radius: 50px;
 	text-decoration: none;
 }
 
-.text-underline {
+.link-underline {
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.site-navigation a:hover .text-underline {
+.site-navigation a:hover .link-underline {
 	border: none;
 }
 
 .catalog-list {
 	background-color: #f8f7f4;
-/* 	display: none; */
 	border-radius: 5px;
 	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 	position: absolute;
@@ -98,6 +116,7 @@ a {
 	padding-top: 8px;
 	padding-bottom: 8px;
 	min-width: 145px;
+	display: none;
 }
 
 .catalog-list li {
@@ -134,6 +153,20 @@ a {
 	font-weight: 700;
 }
 
+.user-block {
+	margin-left: auto;
+	min-width: 270px; 	/* перестраховаться и задвать какой-нибудь max-width, на случай если элементов станет больше и тогда они просто перенесуться на др. строку ?*/
+/* 	max-width: 280px; */ /* Спроси. почему при задании max-width элементы выпадают из контейнера? */
+
+	display: flex;
+	justify-content: flex-end;
+}
+
+.user-block li {
+	margin-left: 10px;
+}
+
+
 
 
 .contact-us {
@@ -153,16 +186,24 @@ a {
 }
 
 
-
 .breadcrumbs {
+	display: flex;
 	list-style: none;
 	font-size: 14px;
 	line-height: 16px;
+	margin: 0;
+	padding: 0;
 }
 
+.breadcrumbs li + li::before {
+	content: " » ";
+}
+
+/*
 .breadcrumbs a::after { 
 	content: " » "; 
 } 
+*/
 
 
 
@@ -183,6 +224,7 @@ a {
 	font-size: 14px;
 	line-height: 16px;
 	color: white;
+	display: inline-block; /* почему нет? */
 }
 
 .button:hover,
@@ -230,7 +272,26 @@ a {
 }
 
 
+.slider {
+	width:auto;
+	text-align: center;
+/* 	display: none; */
+	
+	width: 1146px;
+	overflow: hidden;
+	margin-bottom: 50px;
+}
 
+.slide-list {
+	display: flex;
+	width: 3438px;
+	background-color: #0072bc;
+}
+
+.slide-item {
+	width: 1146px;
+/* 	width: 647px; */
+}
 
 .slider-title {
 	font-size: 60px;
@@ -256,24 +317,56 @@ a {
 
 .slider-toggle:active,
 .slider-toogle-current,
-.slider-toogle-current:hover /* добавил эту штуку чтобы не получить дырку при ховере на текущий эл. м.б. переделать */
- {
+.slider-toogle-current:hover {
 	background-color: white;
 }
 
+/*Добавил контейнер кот. позволит ставить вряд блоки. имя? index-columns, row-wrapper или что-то такое */
+.row-container {
+	display: flex;
+	justify-content: space-between;	
+}
 
-
-.offers-list {
-	list-style: none;	
+.offers {
+	margin-bottom: 40px;	
 }
 
 .offers-list {
-	font-weight: 700;	
+	font-weight: 700;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	
+	display: flex;
+	justify-content: space-between;	
+/* 	flex-wrap: wrap; */
+}
+
+.offers-item {
+	border-radius: 15px;
+	width: 560px;
+	min-height: 230px;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.offers-item a.button {
+	align-self: flex-end;
+	margin-top: auto;
 }
 
 .offer-title {
+	margin: 0;
+	margin-bottom: 16px;
 	font-size: 35px;
 	line-height: 41px;
+}
+
+.offer-title + p {
+	margin-top: 0; /* пока оставлю так */
 }
 
 .offer-description {
@@ -284,30 +377,46 @@ a {
 .offer-chocolate {
 	background-image: url('../img/background-chocolate.jpg');
 	background-repeat: no-repeat;
+	background-size: cover; /* подойдёт */
 }
 
 .offer-raspberry {
 	background-image: url('../img/background-raspberry.jpg');
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
+	background-size: cover;
+	
 }
-
-
 
 .product-list {
 	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.product-item {
+	width: 267px;
+	position: relative;
 }
 
 .product-image {
 	width: 267px;
 	height: 267px;
-	border-radius: 135px; /* можно брать с запасом ? */
+	border-radius: 135px;
 	overflow: hidden;
+	
+	margin-bottom: 15px;
 }
 
 .product-price {
 	font-size: 45px;
 	line-height: 60px;	
 	font-weight: 700;
+	margin: 0;
+	position: absolute;
+	top: 210px;
 }
 
 .product-price span {
@@ -315,7 +424,11 @@ a {
 	line-height: 45px;
 }
 
-.product-title a {
+.product-title {
+	margin: 0;
+}
+
+.product-title a{
 	font-size: 16px;
 	line-height: 22px;
 	color: white;
@@ -328,6 +441,10 @@ a {
 	background-image: url('../img/background-waffle.jpg');
 	background-repeat: repeat;
 	color: #323232;
+	width: 100%;
+	box-sizing: border-box;
+	border-radius: 15px;
+	margin-bottom: 40px;
 }
 
 .features-title {
@@ -340,16 +457,35 @@ a {
 	list-style: none;
 	font-size: 16px;
 	line-height: 22px;	
+	
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
 }
 
-
+.feature-item {
+	width: 542px;
+/*
+	padding-left: 58px;
+	box-sizing: border-box;
+*/
+	
+}
 
 .blog {
 	background-color: white;
+	width: 560px;
+	box-sizing: border-box;
+	border-radius: 15px;
+	background-color: aqua;
+	display: flex;
 }
 
-.blog-entry {
+.blog-entry {	
 	background: url('../img/background-strawberry.jpg') no-repeat;
+	background-size: cover;
+
 }
 
 .blog-entry span {
@@ -370,6 +506,8 @@ a {
 
 .mailing {
 	background-color: #f8f7f4;
+	width: 560px;
+	border-radius: 15px;
 }
 
 .mailing p {
@@ -386,33 +524,106 @@ a {
 
 
 
-.adress {
+.addres {
+	width: 302px;
+	min-height: 305px;
+	border-radius: 15px;
+
 	background-color: white;
-	color: #323232;	/* задать цвет текста контейнеру? */
+	color: #323232; 
 }
 
-.adress p,
-.adress span {
+.addres-section {
 	font-size: 14px;
-	line-height: 20px;
+	line-height: 20px;	
 }
 
-.adress b,
-.adress a {
+.addres-accent {
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: 700;
 }
 
-.adress a {
+.pagination-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.pagination-item {
+	
+	width: 26px;
+	height: 26px;
+/* 	vertical-align: middle; */
+	margin-right: 5px;
+}
+
+.pagination-item a {
+	
+	color: white;
+	display: block;
+	border-radius: 15px;
+	width: 26px;
+	height: 26px;
+	border-radius: 15px;
+	text-align: center;
+	line-height: 26px; 
+	
+/* 	vertical-align: middle; почему не срабатывает */
+	
+}
+
+
+
+
+
+.pagination-item a:hover,
+.pagination-item a:focus
+ {
+	background-color: rgba(255,255,255,0.2);
+	color: #323232;
+}
+
+.pagination-current a,
+.pagination-current a:hover,
+.pagination-item a:active 
+ {
+	background-color: white;	
 	color: #323232;
 }
 
 
 
+.main-footer {
+	display: flex;	
+	justify-content: space-between;
+	align-items: center;
+	min-height: 56px;
+}
+
 .footer-social,
 .footer-links {
 	list-style: none;
+}
+
+.footer-social {
+	width: 186px;
+	height: 36px;
+	background-color: #0072bc;
+}
+
+.footer-social a {
+/* 	width:  */
+}
+
+.footer-links {
+	margin: 0;
+	padding: 0;
+	width: 500px;
+	background-color: #0072bc;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -426,9 +637,20 @@ a {
 	font-weight: 700;
 }
 
-.footer-credits span {
+.footer-credits {
+	display: flex;
+	flex-direction: column;
+	
 	font-size: 12px;
 	line-height: 18px;
+}
+
+.footer-credits span {
+/*
+	font-size: 12px;
+	line-height: 18px;
+	display: block;
+*/
 }
 
 
