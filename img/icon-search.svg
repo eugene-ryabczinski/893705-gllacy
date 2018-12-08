@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px"
-	 height="17px" viewBox="0 0 17 17" enable-background="new 0 0 17 17" xml:space="preserve">
-<g id="Layer_1">
-	<image overflow="visible" width="17" height="17" xlink:href="Лупа.png" >
-	</image>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="17px" height="33.9px" viewBox="0 0 17 33.9" style="enable-background:new 0 0 17 33.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#323232;}
+</style>
+<g id="Layer_1_1_">
 </g>
-<g id="Layer_2">
-	<path fill="#FFFFFF" d="M16.958,15.527L11.75,10.32C12.533,9.247,13,7.93,13,6.5C13,2.91,10.09,0,6.5,0S0,2.91,0,6.5
-		S2.91,13,6.5,13c1.438,0,2.763-0.473,3.839-1.263l5.205,5.204L16.958,15.527z M6.5,11C4.019,11,2,8.981,2,6.5S4.019,2,6.5,2
-		S11,4.019,11,6.5S8.981,11,6.5,11z"/>
+<g id="Layer_2_1_">
+	<path class="st0" d="M17,15.5l-5.2-5.2C12.5,9.2,13,7.9,13,6.5C13,2.9,10.1,0,6.5,0S0,2.9,0,6.5S2.9,13,6.5,13
+		c1.4,0,2.8-0.5,3.8-1.3l5.2,5.2L17,15.5z M6.5,11C4,11,2,9,2,6.5S4,2,6.5,2S11,4,11,6.5S9,11,6.5,11z"/>
+</g>
+<g id="Layer_2_2_">
+	<path class="st1" d="M17,32.5l-5.2-5.2c0.8-1.1,1.2-2.4,1.2-3.8c0-3.6-2.9-6.5-6.5-6.5S0,19.9,0,23.4s2.9,6.5,6.5,6.5
+		c1.4,0,2.8-0.5,3.8-1.3l5.2,5.2L17,32.5z M6.5,27.9c-2.5,0-4.5-2-4.5-4.5s2-4.5,4.5-4.5s4.5,2,4.5,4.5S9,27.9,6.5,27.9z"/>
+</g>
+<g id="Layer_1_2_">
 </g>
 </svg>
