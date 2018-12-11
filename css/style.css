@@ -32,12 +32,6 @@ body {
 
 }
 
-.site-wrapper {
-	width: 1200px;
-	margin: 0 auto;
-	padding: 9px 0;
-}
-
 .index-page-background {
 	background-image: url('../img/ice-cream-glow-slide-1.png'); 
 	background-position: top center;
@@ -46,7 +40,8 @@ body {
 
 .container {
 	width: 1146px;
-	padding: 0px 27px;
+	padding: 9px 27px;
+	margin: 0 auto;
 }
 
 .visually-hidden {
@@ -72,10 +67,7 @@ a {
 	color: inherit;
 }
 
-.main-header {
-	display: flex;
-	flex-direction: column; 
-}
+.main-header { }
 
 .main-header-logo {
 	margin-right: 10px;
@@ -95,8 +87,19 @@ a {
 }
 
 .site-navigation > li {
-	display: inline-block;	
+	display: inline-block;
+	position: relative;	
 }
+
+.site-navigation > li:hover::after {
+	content: "";
+	
+	position: absolute;
+
+	width: 100%;
+	height: 50px;
+/* 	невидимая область */
+}	
 
 .site-navigation > li > a {
 	font-weight: bold;
@@ -108,8 +111,8 @@ a {
 	display: block;
 }
 
-.site-navigation > li > a:hover,
-.site-navigation > li > a:focus {
+.site-navigation > li:not(.site-navigation-current) > a:hover,
+.site-navigation > li:not(.site-navigation-current) > a:focus {
 	border-radius: 50px;
 	background-color:#f8f7f4;
 	color: #323232; 
@@ -117,7 +120,7 @@ a {
 /* 	border-radius: 15px; */
 }
 
-.site-navigation > li > a:active {
+.site-navigation > li:not(.site-navigation-current) > a:active {
 	box-shadow: inset 0px 2px 1px 0px #696969;
 }
 
@@ -126,6 +129,16 @@ a {
 	border-radius: 50px;
 	text-decoration: none;
 }
+
+.site-navigation > li:hover > .catalog-list {
+	display: block;
+}
+/*
+почему не срабатывает
+.site-navigation > li > a:hover > .catalog-list {
+	display: block;
+}
+*/
 
 .link-underline {
 	border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -149,12 +162,14 @@ a {
 	border-radius: 5px;
 	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 	position: absolute;
+	top: 36px;
 /* 	margin: 0; */
 	padding: 0;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	min-width: 145px;
 	display: none;
+	z-index: 5;
 }
 
 .catalog-list li {
@@ -187,6 +202,20 @@ a {
 /* каскад м.б. урбать */
 .catalog-list .catalog-new-items a {
 	font-weight: 700;
+}
+
+.catalog-new-items {
+	position: relative;
+}
+
+.catalog-new-items:after {
+	content: "";
+	
+	position: absolute;
+	height: 1px;
+	width: 80%;
+	margin: 0 auto;
+	background-color: red;
 }
 
 .user-block {
@@ -251,28 +280,47 @@ a {
 	margin-left: 8px;
 }
 
-.search {
-	position: absolute;
-	z-index: 3;
-	top:36px;
-	right: 165px;
+.user-block-item {
+	position: relative;
+}
+
+.user-block-item:hover::before {
+	content: "";
 	
+	position: absolute;
+
+	width: 100%;
+	height: 50px;
+/* 	это невидимая область кот. позволяет не пропадать всплывающему меню */
+}
+
+.user-block-item:hover .pop-up {
+	display: block;
+}
+
+/* .user-block-item:focus .pop-up { */ /* нужно правило? при фокусе показывать всплывающее окно */
+
+.pop-up {
 	display: none;
-	width: 340px;
-	padding: 20px;
+	position: absolute;
+	top: 36px;
+	right: 0;
+	z-index: 5;
+}
+
+.search,
+.login,
+.cart {
 	box-sizing: border-box;
 	
 	background-color: #f8f7f4;
 	border-radius: 5px;
-	
-	transition-duration: 0.2s;
-	opacity: 0;
+	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
-.button-search:hover ~ .search,
-.button-search:focus ~ .search { /* нужно правило? при фокусе показывать всплывающее окно */
-	display: block;
-	opacity: 1;
+.search {
+	width: 340px;
+	padding: 20px;
 }
 
 .search input {
@@ -290,27 +338,8 @@ a {
 }
 
 .login {
-	position: absolute;
-	z-index: 3;
-	right: 300px;
-	top: 36px;
-	right: 95px;;
-	
-	display: none;
 	width: 277px;
 	padding: 20px;
-	box-sizing: border-box;
-	
-	border-radius: 5px;
-	background-color: #f8f7f4;
-	
-	transition-duration: 0.2s;
-	opacity: 0;
-}
-
-.button-login:hover ~ .login {
-	display: block;
-	opacity: 1;
 }
 
 .login-item {
@@ -353,31 +382,12 @@ a {
 }
 
 .cart {
-	display: none;
 	padding: 20px;
-	z-index: 2;
+	min-width: 540px;
 
 	font-size: 13px;
 	line-height: 16px;
-	
-	position: absolute;
-	top:36px;
-	right: 0;
-	min-width: 540px;
-	box-sizing: border-box;
-	background-color: #f8f7f4;
 	color: #323232;
-	
-	border-radius: 5px;
-	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-	
-	transition-duration: 0.5s;
-	opacity: 0;
-}
-
-.button-cart-full:hover ~ .cart {
-	display: block;
-	opacity: 1;
 }
 
 .cart-list {
@@ -413,18 +423,21 @@ a {
 .cart-item-title {
 	padding-top: 10px;
 	margin-right: 35px;
-/* 	width: 240px; */
 	width: 220px;
 	align-self: flex-start;
 }
 
 .cart-item-amount {
 	margin-right: 30px;	
+	width: 95px;
 }
 
 .cart-item-amount span {
 	color: #999999;
+}
 
+.cart-item-price {
+	width:55px;
 }
 
 .cart-payment {
@@ -442,36 +455,6 @@ a {
 	margin-bottom: 15px;
 }
 
-
-
-.button-remove {
-	display: block;
-	width: 11px;
-	height: 11px;
-	margin-right: 10px;
-	
-	background: url("../img/icon-close.svg") no-repeat;
-	border: none;
-	
-	cursor: pointer;
-}
-
-.button-close-feedback {
-	position: absolute;
-	top: 16px;
-	right: 17px;
-	
-	display: block;
-	width: 18px;
-	height: 17px;
-	
-	background: url("../img/icon-close.svg") no-repeat;
-	background-size: 18px 17px;
-	border: none;
-	
-	cursor: pointer;
-}
-
 .button {
 	padding: 8px 15px;
 	
@@ -482,12 +465,15 @@ a {
 	font-size: 14px;
 	line-height: 16px;
 	color: white;
-	display: inline-block; /* почему нет? */
+	display: inline-block;
+	
+	cursor: pointer;
 }
 
-.button:hover,
-.button:focus
- {
+/* целесообразность селектора. был такой .button:hover { }*/
+
+.button:not(.button-cart-empty):not(.button-accent):hover,
+.button:not(.button-cart-empty):not(.button-accent):focus {
 	color: #323232;
 	background-color:#f8f7f4;
 }
@@ -528,8 +514,6 @@ a {
 	background-image: linear-gradient(to top, #f26843, #e74a35);
 	box-shadow: inset 0px 2px 1px 0px rgba(172, 16, 0, 0.64);
 }
-
-/* тут была корзина полная */
 
 .button-cart-empty, 
 .button-cart-full
@@ -610,44 +594,65 @@ a {
 }
 
 .button-filter {
-	flex-grow: 1;
-	max-width: 140px;	
+	width: 100%;
 	font-size: 16px;
 	line-height: 18px;
 	
-	background-origin: border-box;
-	
+	padding-bottom: 9px;
+	padding-top: 10px;
+		
 	box-sizing: border-box;
 	border-radius: 20px; /* не по макету */	
-	border: 2px solid white;
-	
-
+	box-shadow: inset 0px 0px 0px 2px white;
+/* 	border: 2px solid white; */
 }
 
 .button-filter:hover,
 .button-filter:focus {
 	background-color:#f8f7f4;
-	border-color: #f8f7f4;
 	color: #323232; 
+	box-shadow: none;
 }
 
 .button-filter:active {
-	border-color: rgba(255, 255, 255, 0);
+/* 	border-color: rgba(255, 255, 255, 0); */
+	border-color: transparent;
 	background-color: #eaeaea;
 	box-shadow: inset 0px 2px 1px 0px #696969;
-	/* не по стайлгайду. как сделать по сатайлгайду я не знаю. может вся обводка это box-shadow? это странно*/
 }
 
+.button-remove {
+	display: block;
+	width: 11px;
+	height: 11px;
+	margin-right: 10px;
+	
+	background: url("../img/icon-close.svg") no-repeat;
+	border: none;
+	
+	cursor: pointer;
+}
 
-
-
-
-
+.button-close-feedback {
+	position: absolute;
+	top: 16px;
+	right: 17px;
+	
+	display: block;
+	width: 18px;
+	height: 17px;
+	
+	background: url("../img/icon-close.svg") no-repeat;
+	background-size: 18px 17px;
+	border: none;
+	
+	cursor: pointer;
+}
 
 .slider {
 	text-align: center;
-	
-	overflow: hidden;
+		
+/* 	overflow: hidden; */
 	position: relative;
 	width: 1146px;
 	margin-bottom: 45px;
@@ -655,8 +660,13 @@ a {
 
 .slide-list {
 	display: flex;
-	width: 3438px;
-/* 	background-color: #0072bc; */
+	width: 100%;
+/* 	width: 3438px; */
+}
+
+#slide-2,
+#slide-3 {
+	display: none;
 }
 
 .slide-item {
@@ -773,7 +783,17 @@ a {
 }
 
 .popular-products {
+/* 	margin-bottom: 40px; */
+}
+
+.products {
 	margin-bottom: 40px;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.popular-products .product-item {
+/* 	margin-bottom: 0;  */
+	/* убрать отступы только на главной странице */
 }
 
 .product-list {
@@ -781,39 +801,83 @@ a {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	justify-content: space-between;
+/* 	justify-content: space-between; */
 	flex-wrap: wrap;
+/* 	margin-bottom: -40px; */
 }
 
 .product-item {
+	position: relative;
+
 	width: 267px;
-	
+	margin-right: 26px;
+	margin-bottom: 40px;
+		
 /* 	padding: 6px 13px; */
 	box-sizing: border-box;
-	
-	position: relative;
-	margin-bottom: 40px;
-/* 	display: flex; */
+	display: flex;
 	flex-direction: column;
-	position: relative;
 }
 
-
+.product-item:nth-child(4n) {
+	margin-right: 0;
+}
 
 .product-item::before {
 	content: "";
+
 	position: absolute;
-	display: block;
-	z-index: -5;
-	width: 293px;
-	height: 400px;
-	left: -13px;
+	top: -6px;
+	left: -14px;
+	z-index: 1;
+
+	display: none;		
+	width: 100%;
+	height: 100%;
+	padding: 6px 14px 85px;
+	
+	border-radius: 5px;
+	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 	background-color: white;
-	opacity: 0.4;
-	display: none;
+	opacity: 0.2;
 }
-.product-item:hover.product-item::before {
+
+/* странный селктор */
+.product-item:hover.product-item::before,
+.product-item:hover .product-preview {
 	display: block;
+}
+
+.product-preview {
+	position: absolute;
+	bottom: -65px;
+	z-index: 5;
+
+	display: none;
+	width: 100%;
+	
+	text-align: center;
+}
+
+.product-item-hit::after {
+	content: "";
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	display: block;
+	width: 61px;
+	height: 61px;
+	
+	background: url("../img/icon-hit.svg") no-repeat;
+	z-index: 2;
+}
+
+.product-image,
+.product-price,
+.product-itile {
+	margin: 0;
 }
 
 .product-image {
@@ -829,6 +893,7 @@ a {
 .product-price {
 	position: absolute;
 	top: 210px;
+	z-index: 2;
 
 	margin: 0;
 		
@@ -847,6 +912,8 @@ a {
 .product-title {
 	margin: 0;
 	text-align: center;
+	position: relative;
+	z-index: 10;
 }
 
 .product-title a {
@@ -855,12 +922,7 @@ a {
 	font-weight: 400;
 	color: white;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);	
-}
-
-.product-preview {
-/* 	display: none; */
-	margin-top: 18px;
-	text-align: center;
+	z-index: 3;
 }
 
 .features {
@@ -889,6 +951,7 @@ a {
 	
 	margin: 0;
 	padding: 0;
+	margin-bottom: -25px;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -918,7 +981,7 @@ a {
 	top: -16px;
 	left: 0;
 
-	content: '';
+	content:"";
 
 	display: block;
 	width: 49px;
@@ -926,7 +989,7 @@ a {
 }
 
 .icon-ice-cream::before {
-	content: '';
+	content: "";
 	background: url("../img/icon-ice-cream.svg");
 }
 
@@ -973,19 +1036,23 @@ a {
 	padding-right: 225px;
 }
 
-
-
 .mailing {
-	background-color: #f8f7f4;
+	padding: 6px;
 	width: 560px;
-	border-radius: 15px;
-	padding: 37px 28px;
+	
 	box-sizing: border-box;
-/*
-	background-image: 
-		linear-gradient(#f8f7f4,#f8f7f4),
-		repeating-linear-gradient(-45deg, #92cdff 0, #92cdff 7px, white 7px, white 14px, #fe9e90 14px, #fe9e90 21px, white 21px, white 28px);	
-*/
+
+	background-image: repeating-linear-gradient(-45deg, #92cdff 0, #92cdff 7px, white 7px, white 14px, #fe9e90 14px, #fe9e90 21px, white 21px, white 28px);	
+}
+
+.mailing,
+.mailing-wrapper {
+	border-radius: 15px;
+}
+
+.mailing-wrapper {
+	padding: 33px 20px;
+	background-color: #f8f7f4;	
 }
 
 .mailing-info {
@@ -1019,11 +1086,11 @@ a {
 	
 	border-radius: 5px;
 	border: 1px solid #d3d3d2;
-	
 }
 
 .contacts {
 	position: relative;
+	background-color: #305fec;
 }
 
 .contacts::before {
@@ -1037,11 +1104,10 @@ a {
 	top: 125px;
 }
 
-
 .addres {
 	position:absolute;
 	right: 27px;
-	top:64px;
+	top: 64px;
 	
 	width: 302px;
 	min-height: 305px;
@@ -1072,52 +1138,97 @@ a {
 .pagination-list {
 	list-style: none;
 	margin: 0;
+	margin-bottom: 32px;
 	padding: 0;
-	display: flex;
+	display: flex; /* пагинация выстраивается в ряд */
+	flex-wrap: wrap;
+	justify-content: flex-end; /* прижать пагинацию вправо*/
+	
 }
 
 .pagination-item {
-	
-	width: 26px;
-	height: 26px;
-/* 	vertical-align: middle; */
 	margin-right: 5px;
 }
 
 .pagination-item a {
-	
-	color: white;
-	display: block;
-	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+/* 	для центровки цифр */
+
 	width: 26px;
 	height: 26px;
+/*
+	padding-top:5px;
+	padding-bottom: 4px;
+	padding-left: 9px;
+	padding-right: 9px;	*/
 	border-radius: 15px;
-	text-align: center;
-	line-height: 26px; 
-	
+
+	color: white;
+	font-size: 16px;
+	line-height: 18px;	
 /* 	vertical-align: middle; почему не срабатывает */
 	
 }
 
+.pagination-item a:hover,
+.pagination-item a:focus {
+	background-color: rgba(255,255,255,0.2);
+	color: white;
+}
+
+.pagination-current a,
+.pagination-current a:hover,
+.pagination-item a:active {
+	background-color: white;	
+	color: #323232;
+}
+
+.pagination-next,
+.pagination-prev {
+	display: inline-block;
+	width: 7px;
+	height: 12px;
+}	
+	
+.pagination-next {
+	background: url("../img/pagination-icon.svg") no-repeat;
+}
+
+.pagination-prev {
+	background: url("../img/pagination-icon.svg") no-repeat;
+	transform: rotate(180deg);
+}
+
+.pagination-disabled {
+	opacity: 0.5;
+}
+
+
+
+
+
 .filter {
 	margin-bottom: 40px;
+	max-width: 880px; /* временно */
 }
 
 .filter form {
 	display: flex;
 	flex-wrap: wrap;
-/* 	align-items: center; */
 	align-items: flex-end;
 }
 
 fieldset {
 	margin: 0;
 	padding: 0;
-	border: none;
 	margin-bottom: 15px;
 	margin-right: 15px;
-/* 	display: flex; */
-/* 	flex-direction: column; */
+	
+	border: none;
+	
+	flex-grow: 1;
 } 
 
 .filter legend {
@@ -1147,6 +1258,11 @@ fieldset {
 
 .filter-option {
 	margin-right: 18px;
+	
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	
 	display: flex; /* временно */
 	align-items: center; /* временно */
 }
@@ -1155,59 +1271,48 @@ fieldset {
 	margin-right: 0;
 }
 
-.filter-sort {
+.filter-select {
 	display: inline-block;
-	padding-right: 37px;
 	position: relative;
 }
 
-.filter-sort:hover,
-.filter-sort:focus {
-	color: #323232;
+.filter-select select {
+	padding-right: 35px;
+
+	background-color: transparent;
+	border: none;
+	color: white;
+		
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
-/* странный селектор получился путём подбора */
-.filter-sort:focus.filter-sort-arrow-up::after {
-	border-bottom-color:#323232;
-}
-
-.filter-sort:focus.filter-sort-arrow-down::after {
-	border-top-color:#323232;	
-}
- 
-.filter-sort-arrow-down:hover::after {
-	border-top-color:#323232;
-}
-
-.filter-sort-arrow-up:hover::after {
-	border-bottom-color:#323232;
-}
-
-.filter-sort-arrow-down::after,
-.filter-sort-arrow-up::after {
+.filter-select::after {
 	content: "";
 
 	position: absolute;
-	top:7px;
+	top: 6px;
 	right: 0;
 
 	display: block;
 	
 	border: 5px solid white;
 	border-right-color: transparent;
-	border-left-color: transparent;			
-}
-
-.filter-sort-arrow-down::after {
-	border-top-color: white;
+	border-left-color: transparent;	
+	border-bottom-color: transparent;
 	border-top-width: 9px;
-	border-bottom-width: 0px;
+/* 	border-top-color:#323232;	 */
+	
 }
 
-.filter-sort-arrow-up::after {
-	border-bottom-color: white;
-	border-bottom-width: 9px;
-	border-top-width: 0px;
+.filter-select select:hover,
+.filter-select select:focus {
+	color: #323232;
+}
+
+.filter-select:hover::after {
+	border-top-color: #323232; 
 }
 
 .filter-label {
@@ -1227,6 +1332,7 @@ fieldset {
 	content: "";
 	position: absolute;
 	left: 0;
+	top: -1px;
 	
 	display: block;
 	width: 22px;
@@ -1257,46 +1363,45 @@ fieldset {
 	align-items: center;
 }
 
-.filter-range-bar {
-/* 	position: absolute; */	
+.filter-scale {
 	display: block;
 	width: 176px;
 
 	height: 4px;
+	background-color: #cbd4cd ;
+}
+
+.filter-bar {
+	width: 55%;
+	margin-left:25px;
+	height: 4px;
 	background-color: #f8f7f4;
 }
 
-
 .filter-range-handle {
-	display: inline-block;
 	position: absolute;
-	
-/* 	position: absolute; */
-/* 	transform: translate(-50%, -50%); */
-	
-/*
-	height: 20px;
-	width: 20px;
-	background-color: white;
-*/
-	
+
 	height: 4px;
 	width: 4px;
-	background-color: #ababab;
 
+	background-color: #ababab;
 	border: 8px solid white;
-/* 	box-shadow: 0px 0px 0px 9px black; */
-	
 	border-radius: 20px;
-	cursor: pointer; 	
+	cursor: pointer;
+	transition-duration: 0.1s; 	
 }
 
 .filter-range-handle-left {
-	left:13px;	
+	left:15px;	
 }
 
 .filter-range-handle-right {
 	right: 45px;
+}
+
+.filter-range-handle-left:hover,
+.filter-range-handle-right:hover {
+	transform: scale(1.12);
 }
 
 .filter-input-checkbox + .filter-label::before {
@@ -1323,37 +1428,6 @@ fieldset {
 }
 
 /* disabled! */
-
-.pagination-next,
-.pagination-prev {
-	display: inline-block;
-	width: 8px;
-	height: 12px;
-}	
-	
-.pagination-next {
-	background: url("../img/pagination-arrow.svg") no-repeat;
-}
-
-.pagination-prev {
-	background: url("../img/pagination-arrow.svg") no-repeat;
-	transform: rotate(180deg);
-}
-
-.pagination-item a:hover,
-.pagination-item a:focus
- {
-	background-color: rgba(255,255,255,0.2);
-	color: white;
-}
-
-.pagination-current a,
-.pagination-current a:hover,
-.pagination-item a:active 
- {
-	background-color: white;	
-	color: #323232;
-}
 
 .main-footer {
 	display: flex;	
@@ -1389,8 +1463,7 @@ fieldset {
 }
 
 .social-button:hover,
-.social-button:focus
- {
+.social-button:focus {
 	border-color: white;
 }
 
@@ -1410,23 +1483,29 @@ fieldset {
 	background: url("../img/icon-vk.svg") no-repeat;	
 }
 
+.footer-links-list {
+	display: flex;
+	align-items: flex-start;
+}
+
 .footer-links {
 	margin: 0;
 	padding: 0;
 	position: relative;
+	margin-right: 35px;
+}
 
-	column-count: 2; 
-	-webkit-column-gap: 0;
+.footer-links:last-child {
+	margin-right: 0;
 }
 
 .footer-links li {
-	background-color: #1053c2;
 	margin-bottom: 7px;
 }
 
 .footer-links a {
 	font-size: 13px;
-	line-height: 18px;
+	line-height: 16px;
 	color: white;	
 
 	border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -1440,47 +1519,45 @@ fieldset {
 	content: "";
 
 	position: absolute;
-	
-	display: block;
-
-	width: 15px;
-	height: 13px;
-	
 	top:0;
 	left: -22px;
+
+	display: block;
+	width: 15px;
+	height: 13px;
 
 	background: url("../img/icon-heart.svg") no-repeat;
 }
 
 .footer-credits {
-	font-size: 12px; 
-	line-height: 18px; 
+	font-size: 0;
+	line-height: 0;
 }
 
 .footer-credits p {
 	margin: 0;
+	font-size: 12px; 
+	line-height: 18px; 
 }
 
 .footer-credits a {
-	background-color: #1053c2;
-	margin: 0;
 	display: inline-block;
 }
 
 .modal {
-	background-color: #f8f7f4;
-
+	display: none;
 }
 
 .modal-feedback {
 	position: relative;
 
+
 	width: 480px;
-	min-height: 445px;
 	padding: 20px 25px;
 	
 	border-radius: 15px;
-/* 	text-align: right; */
+	background-color: #f8f7f4;
+
 }
 
 .feedback-title {

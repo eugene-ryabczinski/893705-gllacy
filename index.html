@@ -6,8 +6,7 @@
 	<link href="css/normalize.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-	<div class="site-wrapper index-page-background">
+<body class="index-page-background">
 		<div class="container">
 			<header class="main-header">
 				<nav class="main-navigation">
@@ -28,15 +27,15 @@
 						<li><a href="#"><span class="link-underline">О Компании</span></a></li>
 					</ul>
 					<ul class="user-block">
-						<li><button class="button button-search"></button>
-							<div class="search"> <!-- может дать класс вроде search-panel search-window search-popup -->
+						<li class="user-block-item"><button class="button button-search"></button>
+							<div class="search pop-up"> <!-- может дать класс вроде search-panel search-window search-popup -->
 								<form action="#" method="post">
 									<input type="search" placeholder="Что ищем?">
 								</form>
 							</div> 
 						</li>
-						<li><button class="button button-login">Вход</button>
-							<div class="login"> 
+						<li class="user-block-item"><button class="button button-login">Вход</button>
+							<div class="login pop-up"> 
 								<form action="#" method="post">
 									<p class="login-item">
 										<label class="visually-hidden" for="user-email">Электронная почта</label>
@@ -56,8 +55,8 @@
 								</form> 
 							</div>	<!-- end login -->			
 						</li>
-						<li><button class="button button-cart-full">Корзина</button>								
-							<div class="cart">
+						<li class="user-block-item"><button class="button button-cart-full">Корзина</button>								
+							<div class="cart pop-up">
 								<ul class="cart-list"> 
 									<li class="cart-item">
 										<button class="button-remove" aria-label="Удалить товар"></button>
@@ -66,7 +65,7 @@
 										</p>
 										<p class="cart-item-title">
 											Пломбир с апельсиновым джемом
-										</p>
+										</p> 
 										<p class="cart-item-amount">
 											1,5кг x <span>200 руб<span>
 										</p>
@@ -98,21 +97,21 @@
 				<section class="slider">
 					<!-- <h2 class="visually-hidden">Галерея</h2> -->
 					<div class="slide-list">
-						<div class="slide-item">  
+						<div class="slide-item" id="slide-1">  
 <!-- 							<img src="img/ice-cream-slide-1.png" width="647" height="584" alt="Картинка с мороженым">   -->
 							<h3 class="slider-title">
 								Крем-брюле и пломбир с малиновым джемом
 							</h3>
 							<a class="button button-large button-accent" href="">Давайте оба!</a>
 						</div>
-						<div class="slide-item">  
+						<div class="slide-item" id="slide-2">  
 <!-- 							<img src="img/ice-cream-slide-2.png" width="647" height="584" alt="Картинка с мороженым">   -->
 							<h3 class="slider-title">
 								Шоколадный пломбир и лимонный сорбет
 							</h3>
 							<a class="button button-large button-accent" href="">Давайте оба!</a>
 						</div>	
-						<div class="slide-item">  
+						<div class="slide-item" id="slide-2">  
 <!-- 							<img src="img/ice-cream-slide-3.png" width="647" height="584" alt="Картинка с мороженым">   -->
 							<h3 class="slider-title">
 								Шоколадный пломбир и лимонный сорбет
@@ -160,7 +159,8 @@
 							</h3>
 							<div class="product-preview">
 								<button class="button button-medium button-accent">Быстрый просмотр</button>
-							</div> 						</li>
+							</div> 						
+						</li>
 						<li class="product-item product-item-hit">
 							<p class="product-image"> 
 								<a href="#">
@@ -241,14 +241,15 @@
 					
 					<section class="mailing">
 						<!-- <h2 class="visually-hidden">Рассылка</h2> -->
-						<p class="mailing-info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-						<form class="mailing-form" action="#" method="post" >
-							<p class="mailing-item"> <!-- придумать имя получше -->
-								<label class="visually-hidden" for="user-email">Электронная почта</label>
-								<input type="email" id="user-email" name="email" placeholder="Электронная почта">
-							</p>
-							<button class="button button-medium button-accent" type="submit">Отправить</button>
-						</form>
+						<div class="mailing-wrapper">
+							<p class="mailing-info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+							<form class="mailing-form" action="#" method="post" >
+								<p class="mailing-item"> <!-- придумать имя получше -->
+									<label class="visually-hidden" for="user-email">Электронная почта</label>
+									<input type="email" id="user-email" name="email" placeholder="Электронная почта">
+								</p>
+								<button class="button button-medium button-accent" type="submit">Отправить</button>
+							</form>						</div>
 					</section>	
 				</div> <!-- end row-container -->
 		</div> <!-- end container -->
@@ -256,19 +257,22 @@
 				<section class="contacts">	
 					<!-- <h2 class="visually-hidden">Контакты</h2>	 -->
 					<img src="img/map.jpg" width='1200' height="428" alt="ул. Большая Конюшенная 19/8, г.Санкт-Петербург"> <!-- карта -->
-					<section class="addres">
-						<p class="addres-section">
-							Адрес главного офиса <br>и офлайн-магазина:
-							<b class="addres-accent">ул. Большая Конюшенная <br>19/8, Санкт-Петербург</b>		
-						</p>
-						<p class="addres-section">
-							Для заказов по телефону:
-							<a class="addres-accent" href="tel:8-812-450-25-25">8 812 450-25-25</a>
-							(с 10 до 20 ежедневно)
-						</p>
-						<button class="button button-medium button-accent">Форма обратной связи</button>
-					</section>
+					<div class="container">
+						<section class="addres">
+							<p class="addres-section">
+								Адрес главного офиса <br>и офлайн-магазина:
+								<b class="addres-accent">ул. Большая Конюшенная <br>19/8, Санкт-Петербург</b>		
+							</p>
+							<p class="addres-section">
+								Для заказов по телефону:
+								<a class="addres-accent" href="tel:8-812-450-25-25">8 812 450-25-25</a>
+								(с 10 до 20 ежедневно)
+							</p>
+							<button class="button button-medium button-accent">Форма обратной связи</button>
+						</section>
+					</div>					
 				</section>
+				
 			</main>
 		<div class="container">	
 			
@@ -280,13 +284,17 @@
 					<li><a class="social-button icon-vk" href="#" aria-label="Вконтакте"></a></li>
 				</ul>
 				
-				<ul class="footer-links">
-					<li class="link-suppliers"><a href="#">Для поставщиков</a></li>
-					<li><a href="#">О производстве</a></li>
-					<li><a href="#">Наши документы</a></li>
-					<li><a href="#">Экологические стандарты</a></li>
-				</ul>
-					
+				<div class="footer-links-list">
+					<ul class="footer-links">
+						<li class="link-suppliers"><a href="#">Для поставщиков</a></li>
+						<li><a href="#">О производстве</a></li>
+					</ul>
+					<ul class="footer-links">
+						<li><a href="#">Наши документы</a></li>
+						<li><a href="#">Экологические стандарты</a></li>
+					</ul>		
+				</div>
+								
 				<div class="footer-credits">
 					<a href="http://htmlacademy.ru">
 						<img src="img/html-academy-logo.svg" width="108" height="39" alt="Сайт HTML Academy">
@@ -315,6 +323,5 @@
 				</form>
 			</section>
 		</div> <!-- end container -->
-	</div> <!-- end site-wraper -->
 </body>
 </html>
