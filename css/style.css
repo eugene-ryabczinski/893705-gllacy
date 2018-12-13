@@ -2,7 +2,7 @@
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 400;
-	src: url('../fonts/web/roboto.woff') format('woff');	
+	src: url('../fonts/web/roboto.woff') format('woff');
 }
 
 @font-face {
@@ -21,11 +21,11 @@
 
 body {
 	margin: 0;
-	
+
 	font-family: Roboto, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 22px;
-	color: white; 
+	color: white;
 
 	background-color: #849d8f;
 /* 	background-image: url('img/ice-cream-glow-slide-1.png'); */
@@ -33,7 +33,7 @@ body {
 }
 
 .index-page-background {
-	background-image: url('../img/ice-cream-glow-slide-1.png'); 
+	background-image: url('../img/ice-cream-glow-slide-1.png');
 	background-position: top center;
 	background-repeat: no-repeat;
 }
@@ -63,7 +63,7 @@ body {
 
 
 a {
-	text-decoration: none; 
+	text-decoration: none;
 	color: inherit;
 }
 
@@ -74,7 +74,7 @@ a {
 }
 
 .main-navigation {
-	display: flex;	
+	display: flex;
 	align-items: center;
 }
 
@@ -86,20 +86,27 @@ a {
 	padding: 0;
 }
 
-.site-navigation > li {
-	display: inline-block;
-	position: relative;	
+.site-navigation {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 630px;
 }
 
+.site-navigation > li {
+	position: relative;
+	margin-right: 5px;
+
+}
+
+/* 	невидимая область чтобы не пропадало меню*/
 .site-navigation > li:hover::after {
 	content: "";
-	
+
 	position: absolute;
 
 	width: 100%;
 	height: 50px;
-/* 	невидимая область */
-}	
+}
 
 .site-navigation > li > a {
 	font-weight: bold;
@@ -115,7 +122,7 @@ a {
 .site-navigation > li:not(.site-navigation-current) > a:focus {
 	border-radius: 50px;
 	background-color:#f8f7f4;
-	color: #323232; 
+	color: #323232;
 	text-decoration: none;
 /* 	border-radius: 15px; */
 }
@@ -130,7 +137,7 @@ a {
 	text-decoration: none;
 }
 
-.site-navigation > li:hover > .catalog-list {
+.site-navigation > li:hover > .pop-up {
 	display: block;
 }
 /*
@@ -152,28 +159,25 @@ a {
 	font-size: 35px;
 	line-height: 41px;
 	font-weight: 700;
-	
+
 	margin: 0;
 	margin-bottom: 25px;
 }
 
 .catalog-list {
-	background-color: #f8f7f4;
-	border-radius: 5px;
-	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 	position: absolute;
 	top: 36px;
-/* 	margin: 0; */
+	z-index: 5;
+
+	display: none;
 	padding: 0;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	min-width: 145px;
-	display: none;
-	z-index: 5;
-}
 
-.catalog-list li {
-	
+	background-color: #f8f7f4;
+	border-radius: 5px;
+	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
 .catalog-list li a {
@@ -181,7 +185,7 @@ a {
 	font-size: 14px;
 	line-height: 16px;
 	color: #323232;
-	
+
 	display: block;
 	padding: 10px 20px;
 }
@@ -204,80 +208,42 @@ a {
 	font-weight: 700;
 }
 
+/* правило убирает наползание подложки на разделитель */
+.catalog-list li:nth-child(2) a {
+	margin-top: 1px;
+}
+
 .catalog-new-items {
 	position: relative;
 }
 
 .catalog-new-items:after {
 	content: "";
-	
+	left: 0;
+	right: 0;
 	position: absolute;
+
 	height: 1px;
-	width: 80%;
-	margin: 0 auto;
-	background-color: red;
+	margin-right: 10px;
+	margin-left: 10px;
+
+	background-color: #d1d0ce;
 }
 
 .user-block {
-	margin-left: auto;
-	min-width: 270px; 	/* перестраховаться и задвать какой-нибудь max-width, на случай если элементов станет больше и тогда они просто перенесуться на др. строку ?*/
-/* 	max-width: 280px; */ /* почему при задании max-width элементы выпадают из контейнера? */
 	position: relative;
+
 	display: flex;
 	justify-content: flex-end;
+	flex-wrap: wrap;
+
+	margin-left: auto;
+	max-width: 270px; 	/* перестраховаться и задвать какой-нибудь max-width, на случай если элементов станет больше и тогда они просто перенесуться на др. строку. почему при задании max-width элементы выпадают из контейнера? ?*/
 }
 
 /* переопредилил правило т.к. оно стало влиять на корзину. ли корзины стали с отступом */
 .user-block > li {
 	margin-left: 10px;
-}
-
-.contact-us {
-	font-weight: 700;
-	
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	margin-left: auto; 
-}
-
-.contact-us span {
-	font-size: 14px;
-	line-height: 16px;
-}
-
-.contact-us a {
-	font-size: 22px;
-	line-height: 24px;
-}
-
-.breadcrumbs {
-	display: flex;
-	margin: 0;
-	margin-bottom: 5px;
-	padding: 0;
-	
-	list-style: none;
-	font-size: 14px;
-	line-height: 16px;
-}
-
-/* .breadcrumbs li { margin-right: 20; } Почему не срабатывал селектор? */
-
-/*
-.breadcrumbs-item {
-	margin-right: 20px;
-}
-*/
-
-.breadcrumhbs li:last-child {
-	margin-right: 0;
-}
-
-.breadcrumbs li + li::before {
-	content: " » ";
-	margin-right: 8px;
-	margin-left: 8px;
 }
 
 .user-block-item {
@@ -286,7 +252,7 @@ a {
 
 .user-block-item:hover::before {
 	content: "";
-	
+
 	position: absolute;
 
 	width: 100%;
@@ -294,7 +260,7 @@ a {
 /* 	это невидимая область кот. позволяет не пропадать всплывающему меню */
 }
 
-.user-block-item:hover .pop-up {
+.user-block-item:not(.pop-up-disabled):hover .pop-up {
 	display: block;
 }
 
@@ -304,7 +270,7 @@ a {
 	display: none;
 	position: absolute;
 	top: 36px;
-	right: 0;
+/* 	right: 0; */
 	z-index: 5;
 }
 
@@ -312,10 +278,12 @@ a {
 .login,
 .cart {
 	box-sizing: border-box;
-	
+
 	background-color: #f8f7f4;
 	border-radius: 5px;
 	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+
+	right: 0;
 }
 
 .search {
@@ -327,12 +295,12 @@ a {
 	font-size: 14px;
 	line-height: 24px;
 	color: 999999;
-	
+
 	padding: 10px 14px;
-	
+
 	width: 100%;
 	box-sizing: border-box;
-	
+
 	border-radius: 5px;
 	border: 1px solid #d3d3d2;
 }
@@ -351,12 +319,12 @@ a {
 	font-size: 14px;
 	line-height: 24px;
 	color: 999999;
-	
+
 	padding: 10px 14px;
-	
+
 	width: 100%;
 	box-sizing: border-box;
-	
+
 	border-radius: 5px;
 	border: 1px solid #d3d3d2;
 }
@@ -369,7 +337,7 @@ a {
 
 .login-options {
 	margin: 0;
-	
+
 	font-size: 13px;
 	line-height: 20px;
 	color: #323232;
@@ -378,7 +346,6 @@ a {
 
 .login-options a {
 	display: block;
-
 }
 
 .cart {
@@ -428,7 +395,7 @@ a {
 }
 
 .cart-item-amount {
-	margin-right: 30px;	
+	margin-right: 30px;
 	width: 95px;
 }
 
@@ -455,18 +422,66 @@ a {
 	margin-bottom: 15px;
 }
 
+.contact-us {
+	font-weight: 700;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-left: auto;
+}
+
+.contact-us span {
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.contact-us a {
+	font-size: 22px;
+	line-height: 24px;
+}
+
+.breadcrumbs {
+	display: flex;
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 0;
+
+	list-style: none;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+/* .breadcrumbs li { margin-right: 20; } Почему не срабатывал селектор? */
+
+/*
+.breadcrumbs-item {
+	margin-right: 20px;
+}
+*/
+
+.breadcrumhbs li:last-child {
+	margin-right: 0;
+}
+
+.breadcrumbs li + li::before {
+	content: " » ";
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
 .button {
 	padding: 8px 15px;
-	
+
 	border: none;
 	background-color: #9fb3a8;
-	border-radius: 16px; 
+	border-radius: 16px;
 
 	font-size: 14px;
 	line-height: 16px;
 	color: white;
 	display: inline-block;
-	
+
 	cursor: pointer;
 }
 
@@ -480,9 +495,9 @@ a {
 
 .button-medium {
 	font-size: 18px;
-	line-height: 24px;	
+	line-height: 24px;
 	font-weight: 700;
-	
+
 	border-radius: 25px;
 }
 
@@ -504,8 +519,8 @@ a {
 .button-accent:hover,
 .button-accent:focus {
 	color: white;
-	
-	background-image: linear-gradient(#f58669, #ec6f5e);	
+
+	background-image: linear-gradient(#f58669, #ec6f5e);
 }
 
 .button-accent:active {
@@ -515,7 +530,7 @@ a {
 	box-shadow: inset 0px 2px 1px 0px rgba(172, 16, 0, 0.64);
 }
 
-.button-cart-empty, 
+.button-cart-empty,
 .button-cart-full
  {
 	position: relative;
@@ -525,14 +540,14 @@ a {
 .button-cart-empty::before,
 .button-cart-full::before {
 	content: "";
-	
+
 	position: absolute;
 	top: 6px;
 	left: 15px;
 	z-index: 5;
-	
+
 	width: 21px;
-	height: 20px;	
+	height: 20px;
 }
 
 .button-cart-empty::before {
@@ -551,14 +566,14 @@ a {
 
 .button-login::before {
 	content: "";
-		
+
 	position: absolute;
 	top: 7px;
-	left: 15px;	
-	
+	left: 15px;
+
 	width: 21px;
 	height: 19px;
-	
+
 	background: url("../img/login.svg") no-repeat 0 0;
 }
 
@@ -569,23 +584,23 @@ a {
 
 .button-search {
 	position: relative;
-	
-	width: 33px; 
- 	height: 32px;		
+
+	width: 33px;
+ 	height: 32px;
 }
 
 .button-search::before {
 	content: "";
-	
+
 	position: absolute;
 
 	width: 17px;
 	height: 17px;
-	
+
 	top: 8px;
 	left: 8px;
-	
- 	background: url("../img/icon-search.svg") no-repeat 0 0; 
+
+ 	background: url("../img/icon-search.svg") no-repeat 0 0;
 }
 
 .button-search:hover::before,
@@ -593,16 +608,17 @@ a {
  	background-position-y: -17px;
 }
 
+
 .button-filter {
 	width: 100%;
 	font-size: 16px;
 	line-height: 18px;
-	
+
 	padding-bottom: 9px;
 	padding-top: 10px;
-		
+
 	box-sizing: border-box;
-	border-radius: 20px; /* не по макету */	
+	border-radius: 20px; /* не по макету */
 	box-shadow: inset 0px 0px 0px 2px white;
 /* 	border: 2px solid white; */
 }
@@ -610,7 +626,7 @@ a {
 .button-filter:hover,
 .button-filter:focus {
 	background-color:#f8f7f4;
-	color: #323232; 
+	color: #323232;
 	box-shadow: none;
 }
 
@@ -626,10 +642,10 @@ a {
 	width: 11px;
 	height: 11px;
 	margin-right: 10px;
-	
+
 	background: url("../img/icon-close.svg") no-repeat;
 	border: none;
-	
+
 	cursor: pointer;
 }
 
@@ -637,21 +653,21 @@ a {
 	position: absolute;
 	top: 16px;
 	right: 17px;
-	
+
 	display: block;
 	width: 18px;
 	height: 17px;
-	
+
 	background: url("../img/icon-close.svg") no-repeat;
 	background-size: 18px 17px;
 	border: none;
-	
+
 	cursor: pointer;
 }
 
 .slider {
 	text-align: center;
-		
+
 /* 	overflow: hidden; */
 	position: relative;
 	width: 1146px;
@@ -668,24 +684,24 @@ a {
 #slide-3 {
 	display: none;
 }
-
 .slide-item {
 	width: 1146px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 
 .slider-title {
 	width: 950px;
-	
+
 	margin: 0;
 	margin-top: 278px;
 	margin-bottom: 22px;
-	
+
 	font-size: 60px;
 	line-height: 61px;
-	color: white; 
+	color: white;
 	text-align: center;
 }
 
@@ -697,7 +713,7 @@ a {
 .slider-toggle {
 	height: 19px;
 	width: 19px;
-	
+
 	border: 2px solid white;
 	border-radius: 20px;
 
@@ -718,13 +734,13 @@ a {
 /*Добавил контейнер кот. позволит ставить вряд блоки. имя? index-columns, row-wrapper или что-то такое */
 .row-container {
 	display: flex;
-	justify-content: space-between;	
+	justify-content: space-between;
 	flex-wrap: wrap;
 	margin-bottom: 40px;
 }
 
 .offers {
-	margin-bottom: 40px;	
+	margin-bottom: 40px;
 }
 
 .offers-list {
@@ -732,9 +748,9 @@ a {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	
+
 	display: flex;
-	justify-content: space-between;	
+	justify-content: space-between;
 /* 	flex-wrap: wrap; */
 }
 
@@ -779,7 +795,7 @@ a {
 .offer-raspberry {
 	background-image: url('../img/background-raspberry.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;	
+	background-size: cover;
 }
 
 .popular-products {
@@ -812,7 +828,7 @@ a {
 	width: 267px;
 	margin-right: 26px;
 	margin-bottom: 40px;
-		
+
 /* 	padding: 6px 13px; */
 	box-sizing: border-box;
 	display: flex;
@@ -831,11 +847,11 @@ a {
 	left: -14px;
 	z-index: 1;
 
-	display: none;		
+	display: none;
 	width: 100%;
 	height: 100%;
 	padding: 6px 14px 85px;
-	
+
 	border-radius: 5px;
 	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 	background-color: white;
@@ -855,21 +871,21 @@ a {
 
 	display: none;
 	width: 100%;
-	
+
 	text-align: center;
 }
 
 .product-item-hit::after {
 	content: "";
-	
+
 	position: absolute;
 	top: 0;
 	left: 0;
-	
+
 	display: block;
 	width: 61px;
 	height: 61px;
-	
+
 	background: url("../img/icon-hit.svg") no-repeat;
 	z-index: 2;
 }
@@ -887,7 +903,7 @@ a {
 
 	border-radius: 135px;
 
-	overflow: hidden;	
+	overflow: hidden;
 }
 
 .product-price {
@@ -896,11 +912,11 @@ a {
 	z-index: 2;
 
 	margin: 0;
-		
+
 	font-size: 45px;
-	line-height: 60px;	
+	line-height: 60px;
 	font-weight: 700;
-	
+
 	text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
 }
 
@@ -921,7 +937,7 @@ a {
 	line-height: 22px;
 	font-weight: 400;
 	color: white;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);	
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	z-index: 3;
 }
 
@@ -947,8 +963,8 @@ a {
 .features-list {
 	list-style: none;
 	font-size: 16px;
-	line-height: 22px;	
-	
+	line-height: 22px;
+
 	margin: 0;
 	padding: 0;
 	margin-bottom: -25px;
@@ -960,7 +976,7 @@ a {
 	position: relative;
 
 	width: 542px;
-	box-sizing: border-box;	
+	box-sizing: border-box;
 	margin-bottom: 25px;
 	padding-left: 58px;
 }
@@ -1002,7 +1018,7 @@ a {
 }
 
 .icon-thermometer::before {
-	background: url("../img/icon-thermometer.svg");	
+	background: url("../img/icon-thermometer.svg");
 }
 
 .blog-entry {
@@ -1013,7 +1029,7 @@ a {
 	flex-direction: column;
 	padding: 20px;
 	min-height: 220px;
-		
+
 	background: url('../img/background-strawberry.jpg') no-repeat;
 	background-size: cover;
 }
@@ -1039,10 +1055,10 @@ a {
 .mailing {
 	padding: 6px;
 	width: 560px;
-	
+
 	box-sizing: border-box;
 
-	background-image: repeating-linear-gradient(-45deg, #92cdff 0, #92cdff 7px, white 7px, white 14px, #fe9e90 14px, #fe9e90 21px, white 21px, white 28px);	
+	background-image: repeating-linear-gradient(-45deg, #92cdff 0, #92cdff 7px, white 7px, white 14px, #fe9e90 14px, #fe9e90 21px, white 21px, white 28px);
 }
 
 .mailing,
@@ -1052,13 +1068,13 @@ a {
 
 .mailing-wrapper {
 	padding: 33px 20px;
-	background-color: #f8f7f4;	
+	background-color: #f8f7f4;
 }
 
 .mailing-info {
 	margin: 0;
 	margin-bottom: 37px;
-	
+
 	font-size: 16px;
 	line-height: 22px;
 	color: #5a5a5a;
@@ -1072,24 +1088,25 @@ a {
 .mailing-item {
 	margin: 0;
 	margin-right: 12px;
-	flex-grow: 1; 
+	flex-grow: 1;
 }
 
 .mailing input {
 	font-size: 16px;
 	line-height: 24px;
 	color: 999999;
-	
+
 	width: 100%;
 	box-sizing: border-box;
 	padding: 10px 14px;
-	
+
 	border-radius: 5px;
 	border: 1px solid #d3d3d2;
 }
 
 .contacts {
 	position: relative;
+	display: flex;
 	background-color: #305fec;
 }
 
@@ -1105,27 +1122,34 @@ a {
 }
 
 .addres {
-	position:absolute;
+/* 	position:absolute; */
+/*
 	right: 27px;
 	top: 64px;
-	
+*/
+	margin-top: 60px;
+	margin-bottom: 60px;
+	margin-left: auto;
 	width: 302px;
 	min-height: 305px;
 	padding: 30px 25px;
 	box-sizing: border-box;
 
-	color: #323232; 
+	color: #323232;
 
-	border-radius: 15px;	
+	border-radius: 15px;
 	background-color: white;
-	
+}
+
+.map {
+	position: absolute;
 }
 
 .addres-section {
 	font-size: 14px;
 	line-height: 20px;
 	margin: 0;
-	margin-bottom: 25px;	
+	margin-bottom: 25px;
 }
 
 .addres-accent {
@@ -1136,13 +1160,14 @@ a {
 }
 
 .pagination-list {
-	list-style: none;
 	margin: 0;
-	margin-bottom: 32px;
 	padding: 0;
+	margin-bottom: 32px;
 	display: flex; /* пагинация выстраивается в ряд */
-	flex-wrap: wrap;
 	justify-content: flex-end; /* прижать пагинацию вправо*/
+
+	flex-wrap: wrap;
+	list-style: none;
 	
 }
 
@@ -1150,39 +1175,41 @@ a {
 	margin-right: 5px;
 }
 
-.pagination-item a {
-	display: flex;
-	align-items: center;
-	justify-content: center; 
-/* 	для центровки цифр */
-
+.pagination-page-link,
+.pagination-arrow {
 	width: 26px;
 	height: 26px;
-/*
-	padding-top:5px;
-	padding-bottom: 4px;
-	padding-left: 9px;
-	padding-right: 9px;	*/
-	border-radius: 15px;
-
-	color: white;
-	font-size: 16px;
-	line-height: 18px;	
-/* 	vertical-align: middle; почему не срабатывает */
 	
+	/* 	для центровки цифр */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	border-radius: 15px;
 }
 
-.pagination-item a:hover,
-.pagination-item a:focus {
+.pagination-page-link {
+	color: white;
+	font-size: 16px;
+	line-height: 18px;
+/* 	vertical-align: middle; почему не срабатывает */
+}
+
+.pagination-page-link:hover,
+.pagination-page-link:focus {
 	background-color: rgba(255,255,255,0.2);
 	color: white;
 }
 
-.pagination-current a,
-.pagination-current a:hover,
-.pagination-item a:active {
-	background-color: white;	
+.pagination-current .pagination-page-link,
+.pagination-current .pagination-page-link:hover,
+.pagination-item .pagination-page-link:active {
+	background-color: white;
 	color: #323232;
+}
+
+.pagination-arrow {
+	cursor: pointer;
 }
 
 .pagination-next,
@@ -1190,8 +1217,8 @@ a {
 	display: inline-block;
 	width: 7px;
 	height: 12px;
-}	
-	
+}
+
 .pagination-next {
 	background: url("../img/pagination-icon.svg") no-repeat;
 }
@@ -1225,11 +1252,11 @@ fieldset {
 	padding: 0;
 	margin-bottom: 15px;
 	margin-right: 15px;
-	
+
 	border: none;
-	
+
 	flex-grow: 1;
-} 
+}
 
 .filter legend {
 	display: inline-block;
@@ -1249,20 +1276,20 @@ fieldset {
 	box-sizing: border-box;
 
 	display: flex;
-	
+
 	list-style: none;
 	background-color: rgba(255,255,255,0.2);
-	
+
 	border-radius: 20px;
 }
 
 .filter-option {
 	margin-right: 18px;
-	
+
 	font-size: 16px;
 	line-height: 18px;
 	font-weight: 500;
-	
+
 	display: flex; /* временно */
 	align-items: center; /* временно */
 }
@@ -1282,7 +1309,7 @@ fieldset {
 	background-color: transparent;
 	border: none;
 	color: white;
-		
+
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -1296,14 +1323,16 @@ fieldset {
 	right: 0;
 
 	display: block;
-	
+
 	border: 5px solid white;
 	border-right-color: transparent;
-	border-left-color: transparent;	
+	border-left-color: transparent;
 	border-bottom-color: transparent;
 	border-top-width: 9px;
-/* 	border-top-color:#323232;	 */
 	
+	pointer-events: none;
+/* 	border-top-color:#323232;	 */
+
 }
 
 .filter-select select:hover,
@@ -1312,17 +1341,17 @@ fieldset {
 }
 
 .filter-select:hover::after {
-	border-top-color: #323232; 
+	border-top-color: #323232;
 }
 
 .filter-label {
 	font-size: 16px;
 	line-height: 20px;
 	font-weight: 500;
-	
+
 	position: relative;
 	display: inline-block;
-	
+
 	user-select: none;
 	-webkit-user-select:none;
 	padding-left: 35px;
@@ -1333,13 +1362,13 @@ fieldset {
 	position: absolute;
 	left: 0;
 	top: -1px;
-	
+
 	display: block;
 	width: 22px;
 	height: 22px;
-	
+
 	background: url("../img/radio-sprite.svg") no-repeat;
-	
+
 	opacity: 0.7;
 }
 
@@ -1358,7 +1387,7 @@ fieldset {
 
 .filter-range-slider {
 	position: relative;
-	
+
 	display: flex;
 	align-items: center;
 }
@@ -1388,11 +1417,11 @@ fieldset {
 	border: 8px solid white;
 	border-radius: 20px;
 	cursor: pointer;
-	transition-duration: 0.1s; 	
+	transition-duration: 0.1s;
 }
 
 .filter-range-handle-left {
-	left:15px;	
+	left:15px;
 }
 
 .filter-range-handle-right {
@@ -1408,13 +1437,13 @@ fieldset {
 	content: "";
 	position: absolute;
 	left: 0;
-	
+
 	display: block;
 	width: 23px;
 	height: 20px;
-	
+
 	background: url("../img/checkbox-sprite.svg") no-repeat;
-	
+
 	opacity: 0.7;
 }
 
@@ -1430,7 +1459,7 @@ fieldset {
 /* disabled! */
 
 .main-footer {
-	display: flex;	
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	min-height: 56px;
@@ -1455,9 +1484,9 @@ fieldset {
 	display: inline-block;
 	width: 38px;
 	height: 38px;
-	
+
 	box-sizing: border-box;
-	
+
 	border: 3px solid rgba(255,255,255,0.5);
 	border-radius: 20px;
 }
@@ -1468,19 +1497,19 @@ fieldset {
 }
 
 .icon-twitter {
-	background: url("../img/icon-twitter.svg") no-repeat;	
+	background: url("../img/icon-twitter.svg") no-repeat;
 }
 
 .icon-instagram {
-	background: url("../img/icon-instagram.svg") no-repeat;	
+	background: url("../img/icon-instagram.svg") no-repeat;
 }
 
 .icon-fb {
-	background: url("../img/icon-fb.svg") no-repeat;	
+	background: url("../img/icon-fb.svg") no-repeat;
 }
 
 .icon-vk {
-	background: url("../img/icon-vk.svg") no-repeat;	
+	background: url("../img/icon-vk.svg") no-repeat;
 }
 
 .footer-links-list {
@@ -1506,12 +1535,12 @@ fieldset {
 .footer-links a {
 	font-size: 13px;
 	line-height: 16px;
-	color: white;	
+	color: white;
 
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.link-suppliers { 	
+.link-sup pliers {
 	font-weight: 700;
 }
 
@@ -1536,8 +1565,8 @@ fieldset {
 
 .footer-credits p {
 	margin: 0;
-	font-size: 12px; 
-	line-height: 18px; 
+	font-size: 12px;
+	line-height: 18px;
 }
 
 .footer-credits a {
@@ -1554,7 +1583,7 @@ fieldset {
 
 	width: 480px;
 	padding: 20px 25px;
-	
+
 	border-radius: 15px;
 	background-color: #f8f7f4;
 
@@ -1581,12 +1610,12 @@ fieldset {
 	font-size: 14px;
 	line-height: 24px;
 	color: 999999;
-	
+
 	padding: 10px 14px;
-	
+
 	width: 100%;
 	box-sizing: border-box;
-	
+
 	border-radius: 5px;
 	border: 1px solid #d3d3d2;
 }
