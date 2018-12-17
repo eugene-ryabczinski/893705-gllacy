@@ -20,10 +20,62 @@
 						<li><a href="#"><span class="link-underline">О Компании</span></a></li>
 					</ul>
 					<ul class="user-block">
-						<li><button class="button button-search"></button></li>
-						<li><button class="button button-login">Вход</button></li>
-						<li><button class="button button-cart-full">Корзина</button></li>
-						<!-- Выпадающие меню добавлю позже -->
+						<li class="user-block-item"><button class="button-navigation button-search"></button>
+							<div class="search pop-up"> <!-- может дать класс вроде search-panel search-window search-popup -->
+								<form action="#" method="post">
+									<input type="search" placeholder="Что ищем?">
+								</form>
+							</div> 
+						</li>
+						<li class="user-block-item"><button class="button-navigation button-login">Вход</button>
+							<div class="login pop-up"> 
+								<form action="#" method="post">
+									<p class="login-item">
+										<label class="visually-hidden" for="user-email">Электронная почта</label>
+										<input type="email" id="user-email" name="email" placeholder="Электронная почта">
+									</p>
+									<p class="login-item">
+										<label class="visually-hidden" for="user-password">Пароль</label>
+										<input type="password" id="user-password" name="password" placeholder="Пароль">
+									</p>
+									<div class="login-controls">
+										<button class="button button-medium button-accent" type="submit">Войти</button>
+										<p class="login-options"> 
+											<a href="#">Забыли пароль?</a>
+											<a href="#">Новая регистрация</a>
+										</p>
+									</div>
+								</form> 
+							</div>	<!-- end login -->			
+						</li>
+						<li class="user-block-item"><button class="button-navigation button-cart-full">Корзина</button>								
+							<div class="cart pop-up">
+								<ul class="cart-list"> 
+									<li class="cart-item">
+										<button class="button-remove" aria-label="Удалить товар"></button>
+										<p class="cart-item-photo">
+											<img src="img/product-1.jpg" width="33" height="33" alt="Картинка с мороженым">
+										</p>
+										<p class="cart-item-title">
+											Пломбир с апельсиновым джемом
+										</p> 
+										<p class="cart-item-amount">
+											1,5кг x <span>200 руб<span>
+										</p>
+										<p class="cart-item-price">
+											300 руб
+										</p>
+									</li>
+									<!-- Добавь остальные товары -->
+								</ul>
+								<div class="cart-payment">
+									<p class="total-price">
+										Итого: 750 руб.
+									</p>
+									<a href="#" class="button button-accent">Оформить заказ</a>	
+								</div>
+							</div>	<!-- end cart -->	
+						</li>
 					</ul>
 				</nav>
 				
