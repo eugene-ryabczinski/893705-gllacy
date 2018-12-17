@@ -14,7 +14,7 @@
 					<img src="img/logo.svg" width="154" height="64" alt="Логотип Глейси">
 				</a>
 				<ul class="site-navigation">
-					<li><a href="catalog.html"><span class="link-underline">Каталог</span></a>
+					<li class="site-navigation-item"><a href="catalog.html"><span class="link-underline">Каталог</span></a>
 						<ul class="catalog-list pop-up">
 							<li class="catalog-new-items"><a href="#">Новинки</a></li>
 							<li><a href="#">Сливочное</a></li>
@@ -23,14 +23,14 @@
 							<li><a href="#">Мелорин</a></li>
 						</ul>
 					</li>
-					<li><a href="#"><span class="link-underline">Доставка и оплата</span></a></li>
-					<li><a href="#"><span class="link-underline">О Компании</span></a></li>
+					<li class="site-navigation-item"><a href="#"><span class="link-underline">Доставка и оплата</span></a></li>
+					<li class="site-navigation-item"><a href="#"><span class="link-underline">О Компании</span></a></li>
 				</ul>
 				<ul class="user-block">
 					<li class="user-block-item"><button class="button-navigation button-search"></button>
 						<div class="search pop-up"> <!-- может дать класс вроде search-panel search-window search-popup -->
-							<form action="#" method="post">
-								<input type="search" placeholder="Что ищем?">
+							<form class="search-form" action="#" method="post">
+								<input type="search" name="search" placeholder="Что ищем?">
 							</form>
 						</div>
 					</li>
@@ -321,6 +321,6 @@
 		</section>
 	</div> <!-- end container -->
 	<div class="overlay"></div>
-	<script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

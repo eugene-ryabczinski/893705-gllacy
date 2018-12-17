@@ -83,7 +83,7 @@ a:hover {
 
 .main-navigation {
 	display: flex;
-	align-items: center;
+/* 	align-items: center; */
 }
 
 .site-navigation,
@@ -98,16 +98,16 @@ a:hover {
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 630px;
+	margin-top: 15px;
 }
 
-.site-navigation > li {
+.site-navigation > .site-navigation-item {
 	position: relative;
 	margin-right: 5px;
-
 }
 
 /* 	невидимая область чтобы не пропадало меню*/
-.site-navigation > li:hover::after {
+.site-navigation > .site-navigation-item:hover::after {
 	content: "";
 
 	position: absolute;
@@ -116,7 +116,7 @@ a:hover {
 	height: 50px;
 }
 
-.site-navigation > li > a {
+.site-navigation > .site-navigation-item > a {
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 18px;
@@ -126,8 +126,8 @@ a:hover {
 	display: block;
 }
 
-.site-navigation > li:not(.site-navigation-current) > a:hover,
-.site-navigation > li:not(.site-navigation-current) > a:focus {
+.site-navigation > .site-navigation-item:not(.site-navigation-current) > a:hover,
+.site-navigation > .site-navigation-item:not(.site-navigation-current) > a:focus {
 	border-radius: 50px;
 	background-color:#f8f7f4;
 	color: #323232;
@@ -135,7 +135,7 @@ a:hover {
 /* 	border-radius: 15px; */
 }
 
-.site-navigation > li:not(.site-navigation-current) > a:active {
+.site-navigation > .site-navigation-item:not(.site-navigation-current) > a:active {
 	box-shadow: inset 0px 2px 1px 0px #696969;
 }
 
@@ -145,7 +145,7 @@ a:hover {
 	text-decoration: none;
 }
 
-.site-navigation > li:hover > .pop-up {
+.site-navigation > .site-navigation-item:hover > .pop-up {
 	display: block;
 }
 /*
@@ -246,6 +246,7 @@ a:hover {
 	flex-wrap: wrap;
 
 	margin-left: auto;
+	margin-top: 15px;
 	max-width: 270px; 	/* перестраховаться и задвать какой-нибудь max-width, на случай если элементов станет больше и тогда они просто перенесуться на др. строку. почему при задании max-width элементы выпадают из контейнера? ?*/
 }
 

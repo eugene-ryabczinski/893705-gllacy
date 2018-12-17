@@ -111,6 +111,34 @@ mailingForm.addEventListener("submit", function(evt) {
 	}	
 });
 
+// Блок search
+var searchButton = document.querySelector(".button-search");
+var search = document.querySelector(".search");
+var searchForm = search.querySelector(".search-form");
+var searchValue = search.querySelector("[name=search]");
+
+searchButton.addEventListener("mouseover", function(evt) {
+	if (search.classList.contains("popup-error")) {
+		search.classList.remove("popup-error");
+	}
+	searchValue.focus();
+});
+
+
+
+
+searchForm.addEventListener("submit", function(evt) {
+	if (!searchValue.value) {
+		evt.preventDefault();
+		search.classList.remove("popup-error");
+		search.offsetWidth = search.offsetWidth;
+		search.classList.add("popup-error");
+	}
+});
+
+
+
+
 // Слайдер
 var toggles = document.querySelectorAll(".slider-toggle");
 var slides = document.querySelectorAll(".slide-item");
