@@ -30,7 +30,7 @@
 					<li class="user-block-item"><button class="button-navigation button-search"></button>
 						<div class="search pop-up"> <!-- может дать класс вроде search-panel search-window search-popup -->
 							<form class="search-form" action="#" method="post">
-								<input type="search" name="search" placeholder="Что ищем?">
+								<input class="input" type="search" name="search" placeholder="Что ищем?">
 							</form>
 						</div>
 					</li>
@@ -39,21 +39,15 @@
 							<form class="login-form" action="#" method="post">
 								<p class="login-item">
 									<label class="visually-hidden" for="user-email">Электронная почта</label>
-									<input type="email" id="user-email" name="email" placeholder="Электронная почта">
+									<input class="input" type="email" id="user-email" name="email" placeholder="Электронная почта">
 								</p>
 								<p class="login-item">
 									<label class="visually-hidden" for="user-password">Пароль</label>
-									<input type="password" id="user-password" name="password" placeholder="Пароль">
+									<input class="input" type="password" id="user-password" name="password" placeholder="Пароль">
 								</p>
 								<div class="login-controls">
 									<button class="button button-medium button-accent" type="submit">Войти</button>
 									<p class="login-options">
-<!--
-										<a href="#"><span class="site-link site-link-contrast">Забыли пароль?</span></a>
-										<a href="#"><span class="site-link site-link-contrast">Новая регистрация</span></a>
--->
-<!-- 										<a class="site-link-contrast" href="#"><span class="link-unsderline">Забыли пароль?<span></a> -->
-<!-- 										<a class="site-link-contrast" href="#"><span class="link-usnderline">Новая регистрация</span></a> -->
 										<a class="site-link-contrast" href="#">Забыли пароль?</a>
 										<a class="site-link-contrast" href="#">Новая регистрация</a>
 									</p>
@@ -255,7 +249,7 @@
 						<form class="mailing-form" action="#" method="post" >
 							<p class="mailing-item"> <!-- придумать имя получше -->
 								<label class="visually-hidden" for="user-email">Электронная почта</label>
-								<input type="email" id="user-email" name="email" placeholder="Электронная почта">
+								<input class="input" type="email" id="user-email" name="email" placeholder="Электронная почта">
 							</p>
 							<button class="button button-medium button-accent" type="submit">Отправить</button>
 						</form>
@@ -320,15 +314,15 @@
 			<form action="#" method="post">
 				<p>
 					<label class="visually-hidden" for="user-name">Имя</label>
-					<input type="text" id="user-name" name="name" placeholder="Как вас зовут?">
+					<input class="input input-feedback"type="text" id="user-name" name="name" placeholder="Как вас зовут?">
 				</p>
 				<p>
 					<label class="visually-hidden" for="user-email">Почта</label>
-					<input type="email" id="user-email" name="email" placeholder="Ваша почта для ответа">
+					<input class="input input-feedback" type="email" id="user-email" name="email" placeholder="Ваша почта для ответа">
 				</p>
 				<p>
 					<label class="visually-hidden" for="user-comment">Комментарий</label>
-					<textarea name="comment" id="user-comment" rows="7" placeholder="Напишите что-нибудь..."></textarea>
+					<textarea class="input textarea-feedback" name="comment" id="user-comment" rows="7" placeholder="Напишите что-нибудь..."></textarea>
 				</p>
 				<button class="button button-medium button-accent" type="submit">Отправить</button>
 			</form>

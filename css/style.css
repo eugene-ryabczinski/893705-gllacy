@@ -304,11 +304,57 @@ a {
 	right: 0;
 }
 
+.input {
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 700;
+	color: black;
+
+	padding: 10px 14px;
+
+	width: 100%;
+	box-sizing: border-box;
+
+	border-radius: 5px;
+	border: 1px solid #d3d3d2;
+}
+
+.input::-webkit-input-placeholder {
+	color: 999999;
+	font-weight: 400; 
+}
+
+.input:hover {
+	border-color: #d3d2d1;
+	padding: 9px 13px;
+	border-width: 2px;
+}
+
+.input:focus {
+	border-width: 2px;
+	padding: 9px 13px;
+	border-color: #8fbdec;
+	outline: 0;
+}
+
+.input-feedback,
+.textarea-feedback {
+	font-size: 16px;
+	line-height: 24px;
+	width: 100%;
+	display: block;
+}
+
+.input-feedback {
+	width: 286px;
+}
+
 .search {
 	width: 340px;
 	padding: 20px;
 }
 
+/*
 .search input {
 	font-size: 14px;
 	line-height: 24px;
@@ -322,6 +368,7 @@ a {
 	border-radius: 5px;
 	border: 1px solid #d3d3d2;
 }
+*/
 
 .login {
 	width: 277px;
@@ -333,6 +380,7 @@ a {
 	margin-bottom: 20px;
 }
 
+/*
 .login input {
 	font-size: 14px;
 	line-height: 24px;
@@ -346,6 +394,7 @@ a {
 	border-radius: 5px;
 	border: 1px solid #d3d3d2;
 }
+*/
 
 .login-controls {
 	display: flex;
@@ -1755,26 +1804,6 @@ fieldset {
 .modal-feedback p {
 	margin: 0;
 	margin-bottom: 20px;
-}
-
-.modal-feedback input,
-.modal-feedback textarea {
-	display: block;
-	font-size: 14px;
-	line-height: 24px;
-	color: 999999;
-
-	padding: 10px 14px;
-
-	width: 100%;
-	box-sizing: border-box;
-
-	border-radius: 5px;
-	border: 1px solid #d3d3d2;
-}
-
-.modal-feedback input {
-	width: 268px;
 }
 
 .modal-feedback button {
