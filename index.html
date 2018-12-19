@@ -48,8 +48,14 @@
 								<div class="login-controls">
 									<button class="button button-medium button-accent" type="submit">Войти</button>
 									<p class="login-options">
-										<a href="#">Забыли пароль?</a>
-										<a href="#">Новая регистрация</a>
+<!--
+										<a href="#"><span class="site-link site-link-contrast">Забыли пароль?</span></a>
+										<a href="#"><span class="site-link site-link-contrast">Новая регистрация</span></a>
+-->
+<!-- 										<a class="site-link-contrast" href="#"><span class="link-unsderline">Забыли пароль?<span></a> -->
+<!-- 										<a class="site-link-contrast" href="#"><span class="link-usnderline">Новая регистрация</span></a> -->
+										<a class="site-link-contrast" href="#">Забыли пароль?</a>
+										<a class="site-link-contrast" href="#">Новая регистрация</a>
 									</p>
 								</div>
 							</form>
@@ -86,16 +92,16 @@
 				</ul>
 			</nav>
 
-			<section class="contact-us">
+			<div class="contact-us">
 				<!-- <h2 class="visually-hidden">Свяжитесь с нами</h2> -->
 				<span>С 10 до 20, ежедневно</span>
 				<a href="tel:8-812-450-25-25">8 812 450-25-25</a>
-			</section>
+			</div>
 
 		</header>
 		<main class="main-content">
 			<section class="slider">
-				<!-- <h2 class="visually-hidden">Галерея</h2> -->
+				<h2 class="visually-hidden">Галерея</h2>
 				<div class="slide-list">
 					<div class="slide-item" id="slide-1">
 						<h3 class="slider-title">
@@ -105,13 +111,13 @@
 					</div>
 					<div class="slide-item" id="slide-2">
 						<h3 class="slider-title">
-							Пломбир с помадкой и клубничный щербет
+							Пломбир с помадкой и клубничный щербет 
 						</h3>
 						<a class="button button-large button-accent" href="">Давайте оба!</a>
 					</div>
 					<div class="slide-item" id="slide-3">
 						<h3 class="slider-title">
-							Шоколадный пломбир и лимонный сорбет
+							Шоколадный пломбир и лимонный сорбет 
 						</h3>
 						<a class="button button-large button-accent" href="">Давайте оба!</a>
 					</div>
@@ -124,7 +130,7 @@
 			</section>
 
 			<section class="offers">
-				<!-- <h2 class="visually-hidden">Предложения</h2> -->
+				<h2 class="visually-hidden">Предложения</h2>
 				<ul class="offers-list">
 					<li class="offers-item offer-raspberry">
 						<h3 class="offer-title">Малинка даром</h3>
@@ -140,74 +146,82 @@
 			</section>
 
 			<section class="popular-products">
-				<!-- <h2 class="visually-hidden">Популярное мороженное</h2> -->
+				<h2 class="visually-hidden">Популярное мороженное</h2>
 				<ul class="product-list">
 					<li class="product-item product-item-hit">
-						<p class="product-image">
-							<a href="#">
-								<img src="img/product-1.jpg" width="267" height="267" alt="Картинка с мороженым">
-							</a>
-						</p>
-						<p class="product-price">
-							130 Р<span>/кг</span>
-						</p>
-						<h3 class="product-title">
-							<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
-						</h3>
-						<div class="product-preview">
-							<button class="button button-medium button-accent">Быстрый просмотр</button>
+						<div class="product-wrap">
+							<p class="product-image">
+								<a href="#">
+									<img src="img/product-1.jpg" width="267" height="267" alt="Картинка с мороженым">
+								</a>
+							</p>
+							<p class="product-price">
+								130 Р<span>/кг</span>
+							</p>
+							<h3 class="product-title">
+								<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+							</h3>
+							<div class="product-preview">
+								<button class="button button-medium button-accent">Быстрый просмотр</button>
+							</div>
 						</div>
 					</li>
 					<li class="product-item product-item-hit">
-						<p class="product-image">
-							<a href="#">
-								<img src="img/product-2.jpg" width="267" height="267" alt="Картинка с мороженым">
-							</a>
-						</p>
-						<p class="product-price">
-							130 Р<span>/кг</span>
-						</p>
-						<h3 class="product-title" class="link-underline">
-							<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
-						</h3>
-						<div class="product-preview">
-							<button class="button button-medium button-accent">Быстрый просмотр</button>
-						</div> 						</li>
-					<li class="product-item product-item-hit">
-						<p class="product-image">
-							<a href="#">
-								<img src="img/product-3.jpg" width="267" height="267" alt="Картинка с мороженым">
-							</a>
-						</p>
-						<p class="product-price">
-							130 Р<span>/кг</span>
-						</p>
-						<h3 class="product-title">
-							<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
-						</h3>
-						<div class="product-preview">
-							<button class="button button-medium button-accent">Быстрый просмотр</button>
-						</div>
+						<div class="product-wrap">
+							<p class="product-image">
+								<a href="#">
+									<img src="img/product-2.jpg" width="267" height="267" alt="Картинка с мороженым">
+								</a>
+							</p>
+							<p class="product-price">
+								130 Р<span>/кг</span>
+							</p>
+							<h3 class="product-title" class="link-underline">
+								<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+							</h3>
+							<div class="product-preview">
+								<button class="button button-medium button-accent">Быстрый просмотр</button>
+							</div> 
+						</div>					
 					</li>
 					<li class="product-item product-item-hit">
-						<p class="product-image">
-							<a href="#">
-								<img src="img/product-4.jpg" width="267" height="267" alt="Картинка с мороженым">
-							</a>
-						</p>
-						<p class="product-price">
-							130 Р<span>/кг</span>
-						</p>
-						<h3 class="product-title">
-							<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
-						</h3>
-						<div class="product-preview">
-							<button class="button button-medium button-accent">Быстрый просмотр</button>
-						</div>
+						<div class="product-wrap">
+							<p class="product-image">
+								<a href="#">
+									<img src="img/product-3.jpg" width="267" height="267" alt="Картинка с мороженым">
+								</a>
+							</p>
+							<p class="product-price">
+								130 Р<span>/кг</span>
+							</p>
+							<h3 class="product-title">
+								<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+							</h3>
+							<div class="product-preview">
+								<button class="button button-medium button-accent">Быстрый просмотр</button>
+							</div>
+						</div>	
+					</li>
+					<li class="product-item product-item-hit">
+						<div class="product-wrap">
+							<p class="product-image">
+								<a href="#">
+									<img src="img/product-4.jpg" width="267" height="267" alt="Картинка с мороженым">
+								</a>
+							</p>
+							<p class="product-price">
+								130 Р<span>/кг</span>
+							</p>
+							<h3 class="product-title">
+								<a href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+							</h3>
+							<div class="product-preview">
+								<button class="button button-medium button-accent">Быстрый просмотр</button>
+							</div>
+						</div>	
 					</li>
 				</ul>
 			</section>
-
 
 			<section class="features">
 				<h2 class="features-title">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
@@ -283,12 +297,12 @@
 
 			<div class="footer-links-list">
 				<ul class="footer-links">
-					<li class="link-suppliers"><a href="#">Для поставщиков</a></li>
-					<li><a href="#">О производстве</a></li>
+					<li class="link-suppliers"><a class="site-link" href="#"><span class="link-underline">Для поставщиков</span></a></li>
+					<li><a class="site-link" href="#"><span class="link-underline">О производстве</span></a></li>
 				</ul>
 				<ul class="footer-links">
-					<li><a href="#">Наши документы</a></li>
-					<li><a href="#">Экологические стандарты</a></li>
+					<li><a class="site-link" href="#"><span class="link-underline">Наши документы</span></a></li>
+					<li><a class="site-link" href="#"><span class="link-underline">Экологические стандарты</span></a></li>
 				</ul>
 			</div>
 
@@ -321,6 +335,6 @@
 		</section>
 	</div> <!-- end container -->
 	<div class="overlay"></div>
-<script src="js/script.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>

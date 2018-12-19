@@ -142,12 +142,13 @@ searchForm.addEventListener("submit", function(evt) {
 // Слайдер
 var toggles = document.querySelectorAll(".slider-toggle");
 var slides = document.querySelectorAll(".slide-item");
-var currentIndex = 0;
+var currentIndex = 1;
 var slideTimer = 1000;
 var body = document.querySelector("body");
 
 debugger;
 		
+
 var sliderInit = function() {
 	for (var i=0; i < slides.length; i++) {
 		if (i == currentIndex) {
@@ -164,6 +165,9 @@ var sliderInit = function() {
 
 sliderInit();
 
+
+
+
 var changeSlide = function(index) {
 	for (var j=0; j < slides.length; j++) {
 		if (j == index) {
@@ -179,6 +183,8 @@ var changeSlide = function(index) {
 		}	
 	}
 }
+
+// changeSlide(currentIndex);
 	
 var moveIndex = function (index, toggle) {
 	toggle.addEventListener("click", function(evt) {

@@ -28,6 +28,7 @@ body {
 	color: white;
 
 	background-color: #849d8f;
+	transition: background-color 0.3s ease;
 /* 	background-image: url('img/ice-cream-glow-slide-1.png'); */
 
 }
@@ -45,7 +46,6 @@ body {
 }
 
 .visually-hidden {
-/* 	display: none; */
   position: absolute;
 
   width: 1px;
@@ -67,14 +67,38 @@ a {
 	color: inherit;
 }
 
-a:hover {
+.link-underline {
+	border-bottom: 1px solid rgba(255,255,255,0.2);	
+}
+
+.site-link {
+	color: inherit;
+	border-bottom: 1px solid rgba(255,255,255,0.2);	
+}
+
+.site-link:hover,
+.site-link:focus {
 	color: #ffbc9e;
+	border-bottom-color: rgba(255, 189, 158, 0.3);
+}
+
+.site-link-contrast {
+	color: inherit;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.site-link-contrast:hover,
+.site-link-contrast:focus {
+	color: #e84d37;
+	border-bottom-color: rgba(236, 89, 60, 0.3);
 }
 
 .main-header {
 	margin-top: 10px;
 	position: relative;
 	z-index: 5;
+	display: flex;
+	flex-direction: column;
 }
 
 .main-header-logo {
@@ -145,31 +169,14 @@ a:hover {
 	text-decoration: none;
 }
 
-.site-navigation > .site-navigation-item:hover > .pop-up {
+.site-navigation > .site-navigation-item:hover > .pop-up,
+.site-navigation > .site-navigation-item a:focus ~ .pop-up {
 	display: block;
 }
-/*
-почему не срабатывает
-.site-navigation > li > a:hover > .catalog-list {
-	display: block;
-}
-*/
-
-.link-underline {
-	border-bottom: 1px solid rgba(255,255,255,0.2);
-}
+/* :focus-within ? */
 
 .site-navigation a:hover .link-underline {
 	border: none;
-}
-
-.page-title {
-	font-size: 35px;
-	line-height: 41px;
-	font-weight: 700;
-
-	margin: 0;
-	margin-bottom: 25px;
 }
 
 .catalog-list {
@@ -247,7 +254,7 @@ a:hover {
 
 	margin-left: auto;
 	margin-top: 15px;
-	max-width: 270px; 	/* перестраховаться и задвать какой-нибудь max-width, на случай если элементов станет больше и тогда они просто перенесуться на др. строку. почему при задании max-width элементы выпадают из контейнера? ?*/
+	max-width: 270px; 
 }
 
 /* переопредилил правило т.к. оно стало влиять на корзину. ли корзины стали с отступом */
@@ -273,11 +280,9 @@ a:hover {
 	display: block;
 }
 
-/*
 .button-navigation:focus ~ .pop-up {
 	display: block;
 }
-*/
 
 .pop-up {
 	display: none;
@@ -350,15 +355,17 @@ a:hover {
 
 .login-options {
 	margin: 0;
-
+	display: flex; 
+ 	flex-direction: column;
+ 	align-items: flex-start;
+	
 	font-size: 13px;
 	line-height: 20px;
 	color: #323232;
-	text-decoration: underline;
 }
 
 .login-options a {
-	display: block;
+	display: inline-block;
 }
 
 .cart {
@@ -435,13 +442,14 @@ a:hover {
 	margin-bottom: 15px;
 }
 
-.contact-us {
-	font-weight: 700;
-
+.contact-us {		
+	margin-left: auto;
+	width: 265px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
 	margin-bottom: -20px;
+	font-weight: 700;
 }
 
 .contact-us span {
@@ -454,6 +462,15 @@ a:hover {
 .contact-us a {
 	font-size: 22px;
 	line-height: 24px;
+}
+
+.page-title {
+	font-size: 35px;
+	line-height: 41px;
+	font-weight: 700;
+
+	margin: 0;
+	margin-bottom: 25px;
 }
 
 .breadcrumbs {
@@ -518,7 +535,6 @@ a:hover {
 }
 
 .button-navigation {
-/* 	background-color: #9fb3a8; */
 	background-color: rgba(255,255,255,0.2);
 }
 
@@ -565,6 +581,55 @@ a:hover {
 	box-shadow: inset 0px 2px 1px 0px rgba(172, 16, 0, 0.64);
 }
 
+.button-login:hover::before,
+.button-login:focus::before {
+	background-position-y: -19px;
+}
+
+.button-search {
+	position: relative;
+
+	width: 33px;
+ 	height: 32px;
+}
+
+.button-search::before {
+	content: "";
+
+	position: absolute;
+
+	width: 17px;
+	height: 17px;
+
+	top: 8px;
+	left: 8px;
+	
+	background: url("../img/icon-search.svg") no-repeat 0 0;
+}
+
+.button-search:hover::before,
+.button-search:focus::before {
+	background-position-y: -17px;
+}
+
+.button-login {
+	position: relative;
+	padding-left: 45px;
+}
+
+.button-login::before {
+	content: "";
+
+	position: absolute;
+	top: 7px;
+	left: 15px;
+
+	width: 21px;
+	height: 19px;
+
+	background: url("../img/login.svg") no-repeat 0 0;
+}
+
 .button-cart-empty,
 .button-cart-full
  {
@@ -592,55 +657,6 @@ a:hover {
 .button-cart-full::before {
 	background: url("../img/icon-cart-01.svg") no-repeat 0 0;
 	background-position-y: -20px;
-}
-
-.button-login {
-	position: relative;
-	padding-left: 45px;
-}
-
-.button-login::before {
-	content: "";
-
-	position: absolute;
-	top: 7px;
-	left: 15px;
-
-	width: 21px;
-	height: 19px;
-
-	background: url("../img/login.svg") no-repeat 0 0;
-}
-
-.button-login:hover::before,
-.button-login:focus::before {
-	background-position-y: -19px;
-}
-
-.button-search {
-	position: relative;
-
-	width: 33px;
- 	height: 32px;
-}
-
-.button-search::before {
-	content: "";
-
-	position: absolute;
-
-	width: 17px;
-	height: 17px;
-
-	top: 8px;
-	left: 8px;
-
- 	background: url("../img/icon-search.svg") no-repeat 0 0;
-}
-
-.button-search:hover::before,
-.button-search:focus::before {
- 	background-position-y: -17px;
 }
 
 .button-filter {
@@ -716,13 +732,12 @@ a:hover {
 /* 	margin-bottom: 45px; */
 	margin-top: -124px;
 	margin-bottom: -13px;
+	
 }
 
 .slide-list {
 	display: flex;
 	width: 100%;
-	
-/* 	width: 3438px; */
 }
 
 .slide-item {
@@ -732,8 +747,6 @@ a:hover {
 	text-align: center;
 	padding-bottom: 300px; /* устраняет жёсткий переход от градиента к фону */
 	position: relative;	
-	z-index: -1;
-
 }
 
 .slider-title {
@@ -793,15 +806,17 @@ a:hover {
 #slide-2 {
 	background-image: url('../img/ice-cream-glow-slide-2.png');
 	background-position: top center;
-	background-repeat: no-repeat;}
+	background-repeat: no-repeat;
+}
 
 #slide-3 {
 	background-image: url('../img/ice-cream-glow-slide-3.png');
 	background-position: top center;
-	background-repeat: no-repeat;}
+	background-repeat: no-repeat;
+}
 
 .slide-1-bg {
-	background-color: #849d8f;	
+	background-color: #849d8f;
 }
 
 .slide-2-bg {
@@ -844,6 +859,7 @@ a:hover {
 
 .offers {
 	margin-bottom: 40px;
+	position: relative;
 }
 
 .offers-list {
@@ -853,19 +869,20 @@ a:hover {
 	margin: 0;
 
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-/* 	flex-wrap: wrap; */
 }
 
 .offers-item {
-	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	width: 560px;
 	min-height: 230px;
 	padding: 20px;
 	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+	
+	border-radius: 15px;
 }
 
 .offers-item a.button {
@@ -902,7 +919,12 @@ a:hover {
 }
 
 .popular-products {
-/* 	margin-bottom: 40px; */
+	margin-bottom: 40px;
+}
+
+.popular-products .product-item {
+/* 	margin-bottom: 0; */
+	/* убрать отступы только на главной странице  */
 }
 
 .products {
@@ -910,19 +932,18 @@ a:hover {
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.popular-products .product-item {
-/* 	margin-bottom: 0;  */
-	/* убрать отступы только на главной странице */
-}
-
 .product-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	display: flex;
-/* 	justify-content: space-between; */
 	flex-wrap: wrap;
-/* 	margin-bottom: -40px; */
+	margin-bottom: -40px;
+}
+
+.product-item:hover .product-wrap {
+	position: relative;
+	z-index: 2;
 }
 
 .product-item {
@@ -1046,14 +1067,15 @@ a:hover {
 }
 
 .features {
-	background-image: url('../img/background-waffle.jpg');
-	background-repeat: repeat;
-	color: #323232;
 	width: 100%;
 	box-sizing: border-box;
 	border-radius: 15px;
 	margin-bottom: 40px;
 	padding: 20px;
+
+	background-image: url('../img/background-waffle.jpg');
+	background-repeat: repeat;
+	color: #323232;
 }
 
 .features-title {
@@ -1127,14 +1149,15 @@ a:hover {
 }
 
 .blog-entry {
-	width: 560px;
-	box-sizing: border-box;
-	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
+	width: 560px;
 	min-height: 220px;
+	box-sizing: border-box;
+	padding: 20px;
 
+	border-radius: 15px;
+	
 	background: url('../img/background-strawberry.jpg') no-repeat;
 	background-size: cover;
 }
@@ -1212,6 +1235,7 @@ a:hover {
 .contacts {
 	position: relative;
 	display: flex; /* от выпадения маргинов */
+	padding: 60px 0;
 }
 
 /*
@@ -1228,8 +1252,11 @@ a:hover {
 */
 
 .addres {
+
+/*
 	margin-top: 60px;
 	margin-bottom: 60px;
+*/
 	margin-left: auto;
 	width: 302px;
 	min-height: 305px;
@@ -1250,6 +1277,8 @@ a:hover {
 	z-index: 1;
 	width: 100%;
 	height: 100%;
+	top: 0;
+	left: 0;
 }
 
 .map iframe {
@@ -1274,6 +1303,7 @@ a:hover {
 	margin: 0;
 	padding: 0;
 	margin-bottom: 32px;
+	margin-top: 81px;
 	display: flex; /* пагинация выстраивается в ряд */
 	justify-content: flex-end; /* прижать пагинацию вправо*/
 
@@ -1644,7 +1674,7 @@ fieldset {
 	line-height: 16px;
 	color: white;
 
-	border-bottom: 1px solid rgba(255,255,255,0.2);
+/* 	border-bottom: 1px solid rgba(255,255,255,0.2); */
 }
 
 .link-sup pliers {
