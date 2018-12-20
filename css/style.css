@@ -28,21 +28,12 @@ body {
 	color: white;
 
 	background-color: #849d8f;
-	transition: background-color 0.3s ease;
-/* 	background-image: url('img/ice-cream-glow-slide-1.png'); */
-
-}
-
-.index-page-background {
-	background-image: url('../img/ice-cream-glow-slide-1.png');
-	background-position: top center;
-	background-repeat: no-repeat;
+	transition: 0.3s ease;
 }
 
 .container {
 	width: 1146px;
 	margin: 0 auto;
-/* 	padding: 9px 27px; */
 }
 
 .visually-hidden {
@@ -354,22 +345,6 @@ a {
 	padding: 20px;
 }
 
-/*
-.search input {
-	font-size: 14px;
-	line-height: 24px;
-	color: 999999;
-
-	padding: 10px 14px;
-
-	width: 100%;
-	box-sizing: border-box;
-
-	border-radius: 5px;
-	border: 1px solid #d3d3d2;
-}
-*/
-
 .login {
 	width: 277px;
 	padding: 20px;
@@ -379,22 +354,6 @@ a {
 	margin: 0;
 	margin-bottom: 20px;
 }
-
-/*
-.login input {
-	font-size: 14px;
-	line-height: 24px;
-	color: 999999;
-
-	padding: 10px 14px;
-
-	width: 100%;
-	box-sizing: border-box;
-
-	border-radius: 5px;
-	border: 1px solid #d3d3d2;
-}
-*/
 
 .login-controls {
 	display: flex;
@@ -775,13 +734,10 @@ a {
 	text-align: center;
 
 	position: relative;
-		
-	height: 660px;
-	width: 1146px;
-/* 	margin-bottom: 45px; */
-	margin-top: -124px;
-	margin-bottom: -13px;
 	
+	min-height: 485px;
+	margin-bottom: 40px;
+	width: 1146px;	
 }
 
 .slide-list {
@@ -791,10 +747,7 @@ a {
 
 .slide-item {
 	display: none;
-
-	width: 1146px;
 	text-align: center;
-	padding-bottom: 300px; /* устраняет жёсткий переход от градиента к фону */
 	position: relative;	
 }
 
@@ -802,8 +755,8 @@ a {
 	width: 950px;
 	display: inline-block;
 	margin: 0;
-/* 	margin-top: 278px; */
-	margin-top: 392px;
+	margin-top: 285px;
+/* 	margin-top: 392px; */
 	margin-bottom: 22px;
 
 	font-size: 60px;
@@ -814,8 +767,8 @@ a {
 
 .slider-controls {
 	position: absolute;
-/* 	bottom: 0; */
-	bottom: 77px;
+	bottom: 23px;
+	
 	font-size: 0;
 	line-height: 0;
 }
@@ -847,33 +800,52 @@ a {
 }
 
 #slide-1 {		
+/*
+	background-image: url('../img/ice-cream-glow-slide-1.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+*/
+}
+
+#slide-2 {
+/*
+	background-image: url('../img/ice-cream-glow-slide-2.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+*/
+}
+
+#slide-3 {
+/*
+	background-image: url('../img/ice-cream-glow-slide-3.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+*/
+}
+
+.slide-1-bg {
+	background-color: #849d8f;
+	
 	background-image: url('../img/ice-cream-glow-slide-1.png');
 	background-position: top center;
 	background-repeat: no-repeat;
 }
 
-#slide-2 {
+.slide-2-bg {
+	background-color: #8996a6;
+	
 	background-image: url('../img/ice-cream-glow-slide-2.png');
 	background-position: top center;
 	background-repeat: no-repeat;
-}
 
-#slide-3 {
-	background-image: url('../img/ice-cream-glow-slide-3.png');
-	background-position: top center;
-	background-repeat: no-repeat;
-}
-
-.slide-1-bg {
-	background-color: #849d8f;
-}
-
-.slide-2-bg {
-	background-color: #8996a6;
 }
 
 .slide-3-bg {
 	background-color: #9d8b84;
+	
+	background-image: url('../img/ice-cream-glow-slide-3.png');
+	background-position: top center;
+	background-repeat: no-repeat;
 }
 
 .slide-show {
@@ -967,19 +939,20 @@ a {
 	background-size: cover;
 }
 
-.popular-products {
-	margin-bottom: 40px;
-}
-
-.popular-products .product-item {
-/* 	margin-bottom: 0; */
-	/* убрать отступы только на главной странице  */
-}
-
 .products {
 	margin-bottom: 40px;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
+
+.popular-products {
+	margin-bottom: 40px;
+}
+
+/*
+.popular-products .product-item {
+	margin-bottom: 0;
+}
+*/
 
 .product-list {
 	list-style: none;
@@ -1001,8 +974,6 @@ a {
 	width: 267px;
 	margin-right: 26px;
 	margin-bottom: 40px;
-
-/* 	padding: 6px 13px; */
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
