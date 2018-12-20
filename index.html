@@ -28,7 +28,7 @@
 				</ul>
 				<ul class="user-block">
 					<li class="user-block-item"><button class="button-navigation button-search"></button>
-						<div class="search pop-up"> <!-- может дать класс вроде search-panel search-window search-popup -->
+						<div class="search pop-up">
 							<form class="search-form" action="#" method="post">
 								<input class="input" type="search" name="search" placeholder="Что ищем?">
 							</form>
@@ -55,33 +55,7 @@
 							</form>
 						</div>	<!-- end login -->
 					</li>
-					<li class="user-block-item"><button class="button-navigation button-cart-full">Корзина</button>
-						<div class="cart pop-up">
-							<ul class="cart-list">
-								<li class="cart-item">
-									<button class="button-remove" aria-label="Удалить товар"></button>
-									<p class="cart-item-photo">
-										<img src="img/product-1.jpg" width="33" height="33" alt="Картинка с мороженым">
-									</p>
-									<p class="cart-item-title">
-										Пломбир с апельсиновым джемом
-									</p>
-									<p class="cart-item-amount">
-										1,5кг x <span>200 руб<span>
-									</p>
-									<p class="cart-item-price">
-										300 руб
-									</p>
-								</li>
-								<!-- Добавь остальные товары -->
-							</ul>
-							<div class="cart-payment">
-								<p class="total-price">
-									Итого: 750 руб.
-								</p>
-								<a href="#" class="button button-accent">Оформить заказ</a>
-							</div>
-						</div>	<!-- end cart -->
+					<li class="user-block-item pop-up-disabled"><button class="button-navigation button-cart-empty">Пусто</button>
 					</li>
 				</ul>
 			</nav>
