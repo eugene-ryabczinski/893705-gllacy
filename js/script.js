@@ -140,12 +140,10 @@ if(typeof(mailingForm) != "undefined" && mailingForm !== null) {
 // Слайдер
 var toggles = document.querySelectorAll(".slider-toggle");
 var slides = document.querySelectorAll(".slide-item");
-var currentIndex = -1;
+var currentIndex = 0;
 var slideTimer = 3000;
 var body = document.querySelector("body");
 
-
-		
 if(typeof(slides) != "undefined" && slides !== null) {
 	var sliderInit = function() {
 		slides[0].classList.add("slide-show");

@@ -52,7 +52,6 @@ body {
   overflow: hidden;
 }
 
-
 a {
 	text-decoration: none;
 	color: inherit;
@@ -280,7 +279,6 @@ a {
 	display: none;
 	position: absolute;
 	top: 36px;
-/* 	right: 0; */
 	z-index: 5;
 }
 
@@ -493,14 +491,6 @@ a {
 	line-height: 16px;
 }
 
-/* .breadcrumbs li { margin-right: 20; } Почему не срабатывал селектор? */
-
-/*
-.breadcrumbs-item {
-	margin-right: 20px;
-}
-*/
-
 .breadcrumhbs li:last-child {
 	margin-right: 0;
 }
@@ -510,23 +500,6 @@ a {
 	margin-right: 8px;
 	margin-left: 8px;
 }
-
-/*
-.button {
-	padding: 8px 15px;
-
-	border: none;
-	background-color: #9fb3a8;
-	border-radius: 16px;
-
-	font-size: 14px;
-	line-height: 16px;
-	color: white;
-	display: inline-block;
-
-	cursor: pointer;
-}
-*/
 
 .button,
 .button-navigation {
@@ -801,30 +774,6 @@ a {
 	background-color: white;
 }
 
-#slide-1 {		
-/*
-	background-image: url('../img/ice-cream-glow-slide-1.png');
-	background-position: top center;
-	background-repeat: no-repeat;
-*/
-}
-
-#slide-2 {
-/*
-	background-image: url('../img/ice-cream-glow-slide-2.png');
-	background-position: top center;
-	background-repeat: no-repeat;
-*/
-}
-
-#slide-3 {
-/*
-	background-image: url('../img/ice-cream-glow-slide-3.png');
-	background-position: top center;
-	background-repeat: no-repeat;
-*/
-}
-
 .slide-1-bg {
 	background-color: #849d8f;
 	
@@ -868,9 +817,6 @@ a {
 .slide-animation {
 	animation: slide-appearance 0.4s;
 }
-
-
-
 
 /*Добавил контейнер кот. позволит ставить вряд блоки. имя? index-columns, row-wrapper или что-то такое */
 .row-container {
