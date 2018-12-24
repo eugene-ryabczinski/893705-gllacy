@@ -2,21 +2,21 @@
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 400;
-	src: url('../fonts/web/roboto.woff') format('woff');
+	src: url('../fonts/web/roboto.woff') format('woff'), url('../fonts/web/roboto.woff2') format('woff2');
 }
 
 @font-face {
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 500;
-	src: url('../fonts/web/robotomedium.woff') format('woff');
+	src: url('../fonts/web/robotomedium.woff') format('woff'), url('../fonts/web/robotomedium.woff') format('woff');
 }
 
 @font-face {
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 700;
-	src: url('../fonts/web/robotobold.woff') format('woff');
+	src: url('../fonts/web/robotobold.woff') format('woff'), url('../fonts/web/robotomedium.woff') format('woff');
 }
 
 body {
@@ -32,7 +32,11 @@ body {
 }
 
 .container {
-	width: 1146px;
+	width: 1200px;
+	padding-left: 27px;
+	padding-right: 27px;
+	box-sizing: border-box;
+	
 	margin: 0 auto;
 }
 
@@ -57,11 +61,8 @@ a {
 	color: inherit;
 }
 
+.site-link,
 .link-underline {
-	border-bottom: 1px solid rgba(255,255,255,0.2);	
-}
-
-.site-link {
 	color: inherit;
 	border-bottom: 1px solid rgba(255,255,255,0.2);	
 }
@@ -116,13 +117,13 @@ a {
 	margin-top: 15px;
 }
 
-.site-navigation > .site-navigation-item {
+.site-navigation-item {
 	position: relative;
 	margin-right: 5px;
 }
 
 /* 	невидимая область чтобы не пропадало меню*/
-.site-navigation > .site-navigation-item:hover::after {
+.site-navigation-item:hover::after {
 	content: "";
 
 	position: absolute;
@@ -131,34 +132,35 @@ a {
 	height: 50px;
 }
 
-.site-navigation > .site-navigation-item > a {
+.site-navigation-link {
+	display: block;
+	position: relative;
+	padding: 8px 13px;
+	
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 18px;
 	color: white;
-	position: relative;
-	padding: 8px 13px;
-	display: block;
 }
 
-.site-navigation > .site-navigation-item:not(.site-navigation-current) > a:hover,
-.site-navigation > .site-navigation-item:not(.site-navigation-current) > a:focus {
+.site-navigation-current > .site-navigation-link {
+	background-color: #d17058;
+	border-radius: 50px;
+	text-decoration: none;
+}
+
+.site-navigation-item:not(.site-navigation-current) > .site-navigation-link:hover,
+.site-navigation-item:not(.site-navigation-current) > .site-navigation-link:focus {
 	border-radius: 50px;
 	background-color:#f8f7f4;
 	color: #323232;
 	text-decoration: none;
-/* 	border-radius: 15px; */
 }
 
-.site-navigation > .site-navigation-item:not(.site-navigation-current) > a:active {
+.site-navigation-item:not(.site-navigation-current) > .site-navigation-link:active {
 	box-shadow: inset 0px 2px 1px 0px #696969;
 }
 
-.site-navigation-current > a {
-	background-color: #d07058;
-	border-radius: 50px;
-	text-decoration: none;
-}
 
 .site-navigation > .site-navigation-item:hover > .pop-up,
 .site-navigation > .site-navigation-item a:focus ~ .pop-up {
@@ -173,6 +175,7 @@ a {
 .catalog-list {
 	position: absolute;
 	top: 36px;
+	left: 0;
 	z-index: 5;
 
 	display: none;
@@ -186,7 +189,7 @@ a {
 	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
-.catalog-list li a {
+.catalog-link {
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 16px;
@@ -196,12 +199,12 @@ a {
 	padding: 10px 20px;
 }
 
-.catalog-list li a:hover,
-.catalog-list li a:focus {
+.catalog-link:hover,
+.catalog-link:focus {
 	background-color: #faded7;
 }
 
-.catalog-list li a:active {
+.catalog-link:active {
 	background-color: #f6b5a5;
 }
 
@@ -209,12 +212,11 @@ a {
 	background-color: #d07058;
 }
 
-/* каскад м.б. урбать */
-.catalog-list .catalog-new-items a {
+.catalog-new-items .catalog-link {
 	font-weight: 700;
 }
 
-/* правило убирает наползание подложки на разделитель */
+/* убирает наползание на разделитель */
 .catalog-list li:nth-child(2) a {
 	margin-top: 1px;
 }
@@ -225,14 +227,12 @@ a {
 
 .catalog-new-items:after {
 	content: "";
-	left: 0;
-	right: 0;
+	left: 10px;
+	right: 10px;
 	position: absolute;
 
 	height: 1px;
-	margin-right: 10px;
-	margin-left: 10px;
-
+	
 	background-color: #d1d0ce;
 }
 
@@ -240,21 +240,15 @@ a {
 	position: relative;
 
 	display: flex;
-	justify-content: flex-end;
-	flex-wrap: wrap;
-
 	margin-left: auto;
 	margin-top: 15px;
-	max-width: 270px; 
-}
-
-/* переопредилил правило т.к. оно стало влиять на корзину. ли корзины стали с отступом */
-.user-block > li {
-	margin-left: 10px;
+	min-width: 270px; 
 }
 
 .user-block-item {
 	position: relative;
+	
+	margin-left: 10px;
 }
 
 .user-block-item:hover::before {
@@ -267,31 +261,23 @@ a {
 /* 	это невидимая область кот. позволяет не пропадать всплывающему меню */
 }
 
-.user-block-item:not(.pop-up-disabled):hover .pop-up {
-	display: block;
-}
-
+.user-block-item:hover .pop-up,
 .button-navigation:focus ~ .pop-up {
 	display: block;
 }
 
 .pop-up {
 	display: none;
+	box-sizing: border-box;
+	
 	position: absolute;
 	top: 36px;
+	right: 0;
 	z-index: 5;
-}
-
-.search,
-.login,
-.cart {
-	box-sizing: border-box;
-
+	
 	background-color: #f8f7f4;
 	border-radius: 5px;
 	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-
-	right: 0;
 }
 
 .input {
@@ -325,6 +311,10 @@ a {
 	padding: 9px 13px;
 	border-color: #8fbdec;
 	outline: 0;
+}
+
+.textarea-feedback {
+	resize: none;
 }
 
 .input-feedback,
@@ -363,16 +353,12 @@ a {
 .login-options {
 	margin: 0;
 	display: flex; 
- 	flex-direction: column;
- 	align-items: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
 	
 	font-size: 13px;
 	line-height: 20px;
 	color: #323232;
-}
-
-.login-options a {
-	display: inline-block;
 }
 
 .cart {
@@ -435,9 +421,7 @@ a {
 }
 
 .cart-payment {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
+	text-align: right;
 }
 
 .total-price {
@@ -481,7 +465,6 @@ a {
 }
 
 .breadcrumbs {
-	display: flex;
 	margin: 0;
 	margin-bottom: 5px;
 	padding: 0;
@@ -491,11 +474,15 @@ a {
 	line-height: 16px;
 }
 
-.breadcrumhbs li:last-child {
+.breadcrumbs-item {
+	display: inline-block;
+}
+
+.breadcrumbs-item:last-child {
 	margin-right: 0;
 }
 
-.breadcrumbs li + li::before {
+.breadcrumbs-item + .breadcrumbs-item::before {
 	content: " » ";
 	margin-right: 8px;
 	margin-left: 8px;
@@ -619,6 +606,15 @@ a {
 	padding-left: 45px;
 }
 
+.button-cart-full {
+	background-color: #f7f6f3;
+	color: #323232;
+}
+
+.button-cart-empty {
+	cursor: default;
+}
+
 .button-cart-empty::before,
 .button-cart-full::before {
 	content: "";
@@ -728,15 +724,11 @@ a {
 .slider-title {
 	width: 950px;
 	display: inline-block;
-	margin: 0;
-	margin-top: 285px;
 	margin-top: 295px;
-/* 	margin-top: 392px; */
 	margin-bottom: 22px;
 
 	font-size: 60px;
 	line-height: 61px;
-	color: white;
 	text-align: center;
 }
 
@@ -818,8 +810,7 @@ a {
 	animation: slide-appearance 0.4s;
 }
 
-/*Добавил контейнер кот. позволит ставить вряд блоки. имя? index-columns, row-wrapper или что-то такое */
-.row-container {
+.row-wrapper {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -866,25 +857,23 @@ a {
 	line-height: 41px;
 }
 
-.offer-title + p {
-	margin-top: 0; /* пока оставлю так */
-}
-
 .offer-description {
+	margin-top: 0;
 	font-size: 18px;
 	line-height: 22px;
 }
 
+.offers-item {
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+
 .offer-chocolate {
 	background-image: url('../img/background-chocolate.jpg');
-	background-repeat: no-repeat;
-	background-size: cover; /* подойдёт */
 }
 
 .offer-raspberry {
 	background-image: url('../img/background-raspberry.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
 }
 
 .products {
@@ -951,8 +940,7 @@ a {
 	opacity: 0.2;
 }
 
-/* странный селктор */
-.product-item:hover.product-item::before,
+.product-item:hover::before,
 .product-item:hover .product-preview {
 	display: block;
 }
@@ -1021,18 +1009,14 @@ a {
 
 .product-title {
 	margin: 0;
-	text-align: center;
 	position: relative;
-	z-index: 10;
-}
-
-.product-title a {
+	z-index: 3;
+	
 	font-size: 16px;
 	line-height: 22px;
 	font-weight: 400;
+	text-align: center;
 	color: white;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-	z-index: 3;
 }
 
 .features {
@@ -1065,6 +1049,7 @@ a {
 	margin-bottom: -25px;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .feature-item {
@@ -1074,11 +1059,6 @@ a {
 	box-sizing: border-box;
 	margin-bottom: 25px;
 	padding-left: 58px;
-}
-
-.feature-item:nth-child(2n) {
-	margin-left: auto;
-	/* сомневаюсь в логичность этого решения. горизонтальные отступы не задавать, а кадый второй прибивать к правому краю */
 }
 
 .feature-item p {
@@ -1118,8 +1098,6 @@ a {
 }
 
 .blog-entry {
-	display: flex;
-	flex-direction: column;
 	width: 560px;
 	min-height: 220px;
 	box-sizing: border-box;
@@ -1132,11 +1110,13 @@ a {
 }
 
 .blog-entry span {
+	display: block;
+	margin-bottom: 10px;
+	
 	font-size: 16px;
 	line-height: 22px;
 	color: #323232;
 	font-weight: 500;
-	margin-bottom: 10px;
 }
 
 .blog-title {
@@ -1186,19 +1166,6 @@ a {
 	margin: 0;
 	margin-right: 12px;
 	flex-grow: 1;
-}
-
-.mailing input {
-	font-size: 16px;
-	line-height: 24px;
-	color: 999999;
-
-	width: 100%;
-	box-sizing: border-box;
-	padding: 10px 14px;
-
-	border-radius: 5px;
-	border: 1px solid #d3d3d2;
 }
 
 .contacts {
@@ -1252,6 +1219,9 @@ a {
 
 .map iframe {
 	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: none;
 }
 
 .addres-section {
@@ -1273,15 +1243,16 @@ a {
 	padding: 0;
 	margin-bottom: 32px;
 	margin-top: 81px;
-	display: flex; /* пагинация выстраивается в ряд */
-	justify-content: flex-end; /* прижать пагинацию вправо*/
-
-	flex-wrap: wrap;
+	
+	text-align: right;
 	list-style: none;
+	font-size: 0;
+	line-height: 0;
 }
 
 .pagination-item {
 	margin-right: 5px;
+	display: inline-block;
 }
 
 .pagination-page-link,
@@ -1354,26 +1325,25 @@ a {
 	margin-bottom: -15px;
 }
 
-fieldset {
+.filter fieldset {
 	margin: 0;
 	padding: 0;
 	margin-bottom: 15px;
 	margin-right: 15px;
 
 	border: none;
-
+	
 	flex-grow: 1;
 }
 
 .filter legend {
 	display: inline-block;
+	margin-bottom: 6px;
+	padding-left: 16px;
 
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: 500;
-	margin-bottom: 6px;
-	margin-left: 16x; /* почему не срабатывает св-во */
-	padding-left: 16px;
 }
 
 .filter-list {
@@ -1648,7 +1618,7 @@ fieldset {
 /* 	border-bottom: 1px solid rgba(255,255,255,0.2); */
 }
 
-.link-sup pliers {
+.link-suppliers {
 	font-weight: 700;
 }
 

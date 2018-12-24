@@ -10,9 +10,10 @@ try {
 var overlay = document.querySelector(".overlay");
 
 // Блок search
+var search = document.querySelector(".search");
+
 if(typeof(search) != "undefined" && search !== null) {	
 	var searchButton = document.querySelector(".button-search");
-	var search = document.querySelector(".search");
 	var searchForm = search.querySelector(".search-form");
 	var searchValue = search.querySelector("[name=search]");
 	
@@ -37,10 +38,11 @@ if(typeof(search) != "undefined" && search !== null) {
 var loginButton = document.querySelector(".button-login");
 var login = document.querySelector(".login");
 var loginForm = document.querySelector(".login-form");
-var loginEmail = loginForm.querySelector("[name=email]");
-var loginPassword = loginForm.querySelector("[name=password]");
 
 if(typeof(login) != "undefined" && login !== null) {
+	var loginEmail = loginForm.querySelector("[name=email]");
+	var loginPassword = loginForm.querySelector("[name=password]");
+	
 	loginButton.addEventListener("mouseover", function(evt) {
 		if (login.classList.contains("popup-error")) {
 			login.classList.remove("popup-error");
@@ -72,11 +74,12 @@ if(typeof(login) != "undefined" && login !== null) {
 var feedback = document.querySelector(".button-feedback");
 var popup = document.querySelector(".modal-feedback");
 var close = document.querySelector(".modal-close");
-var feedbackForm = popup.querySelector("form");
-var feedbackName = popup.querySelector("[name=name]");
-var feedbackEmail = popup.querySelector("[name=email]");
 
 if(typeof(popup) != "undefined" && popup !== null) {
+	var feedbackForm = popup.querySelector("form");
+	var feedbackName = popup.querySelector("[name=name]");
+	var feedbackEmail = popup.querySelector("[name=email]");
+
 	feedback.addEventListener("click", function(evt) {
 		evt.preventDefault();
 		overlay.classList.add("overlay-show");
@@ -124,9 +127,10 @@ if(typeof(popup) != "undefined" && popup !== null) {
 
 // блок mailing
 var mailingForm = document.querySelector(".mailing-form");
-var mailingEmail = mailingForm.querySelector("[name=email]");
 
 if(typeof(mailingForm) != "undefined" && mailingForm !== null) {
+	var mailingEmail = mailingForm.querySelector("[name=email]");
+	
 	mailingForm.addEventListener("submit", function(evt) {
 		if (!mailingEmail.value) {
 			evt.preventDefault();
