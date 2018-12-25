@@ -14,7 +14,14 @@
 				<img src="img/logo.svg" width="154" height="64" alt="Логотип Глейси">
 			</a>
 			<ul class="site-navigation">
-				<li class="site-navigation-item site-navigation-current"><a class="site-navigation-link">Каталог</a></li>
+				<li class="site-navigation-item site-navigation-current"><a class="site-navigation-link">Каталог</a>
+					<ul class="catalog-list pop-up">
+						<li class="catalog-new-items"><a class="catalog-link" href="#">Новинки</a></li>
+						<li><a class="catalog-link catalog-list-current" href="catalog.html">Сливочное</a></li>
+						<li><a class="catalog-link" href="#">Щербеты</a></li>
+						<li><a class="catalog-link" href="#">Фруктовый лёд</a></li>
+						<li><a class="catalog-link" href="#">Мелорин</a></li>
+					</ul>				</li>
 				<li class="site-navigation-item"><a class="site-navigation-link" href="#"><span class="link-underline">Доставка и оплата</span></a></li>
 				<li class="site-navigation-item"><a class="site-navigation-link" href="#"><span class="link-underline">О Компании</span></a></li>
 			</ul>
@@ -22,7 +29,7 @@
 				<li class="user-block-item"><button class="button-navigation button-search"></button>
 					<div class="search pop-up">
 						<form class="search-form" action="#" method="post">
-							<input class="input" type="search" name="search" placeholder="Что ищем?">
+							<input class="input" type="search" name="search" placeholder="Что ищем?" aria-label="Поиск">
 						</form>
 					</div>
 				</li>
@@ -86,14 +93,12 @@
 	</header>
 
 	<main class="main-content container">
-		<div class="container">	 
 			<ul class="breadcrumbs">
 				<li class="breadcrumbs-item"><a class="site-link" href="index.html">Главная</a></li>
 				<li class="breadcrumbs-item"><a class="site-link" href="#">Каталог</a></li>
 				<li class="breadcrumbs-item breadcrumbs-current">Сливочное</li>
 			</ul>
 			<h1 class="page-title">Сливочное мороженное</h1>
-		
 			<section class="filter">
 				<h2 class="visually-hidden">Фильтр</h2>
 				<form action="catalog.html" method="post">
@@ -102,10 +107,11 @@
 						<ul class="filter-list">
 							<li class="filter-option">
 								<div class="filter-select">
-									<select name="select" id="filter-select">
+									<select class="select-item" name="select" id="filter-select">
 										<option value="popular">по популярности</option>
 										<option value="fat">по жирности</option>
 									</select>
+									<span class="select-arrow"></span>
 								</div>
 							</li>
 						</ul>
@@ -183,7 +189,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-1.jpg" alt="Картинка с мороженым">
+									<img src="img/product-1.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -201,7 +207,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-2.jpg" alt="Картинка с мороженым">
+									<img src="img/product-2.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -219,7 +225,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-3.jpg" alt="Картинка с мороженым">
+									<img src="img/product-3.jpg" width="267" height="267" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -237,7 +243,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-4.jpg" alt="Картинка с мороженым">
+									<img src="img/product-4.jpg" width="267" height="267" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -256,7 +262,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-5.jpg" alt="Картинка с мороженым">
+									<img src="img/product-5.jpg" width="267" height="267" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -274,7 +280,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-6.jpg" alt="Картинка с мороженым">
+									<img src="img/product-6.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -292,7 +298,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-7.jpg" alt="Картинка с мороженым">
+									<img src="img/product-7.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -310,7 +316,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-8.jpg" alt="Картинка с мороженым">
+									<img src="img/product-8.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -329,7 +335,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-9.jpg" alt="Картинка с мороженым">
+									<img src="img/product-9.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -347,7 +353,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-10.jpg" alt="Картинка с мороженым">
+									<img src="img/product-10.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -365,7 +371,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-11.jpg" alt="Картинка с мороженым">
+									<img src="img/product-11.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -383,7 +389,7 @@
 						<div class="product-wrap">
 							<p class="product-image">
 								<a href="#">
-									<img src="img/product-12.jpg" alt="Картинка с мороженым">
+									<img src="img/product-12.jpg" width="267" height="267" alt="Картинка с мороженым">
 								</a>
 							</p>
 							<p class="product-price">
@@ -409,7 +415,6 @@
 					<li class="pagination-item"><a class="pagination-arrow" href="#"><span class="pagination-next"></span></a></li>
 				</ul>
 			</section>
-		</div>	
 	</main>
 	
 	<footer class="main-footer container">

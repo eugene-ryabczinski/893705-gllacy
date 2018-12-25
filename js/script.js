@@ -148,7 +148,7 @@ var currentIndex = 0;
 var slideTimer = 3000;
 var body = document.querySelector("body");
 
-if(typeof(slides) != "undefined" && slides !== null) {
+if(typeof(slides) != "undefined" && slides !== null && slides.length !== 0) {
 	var sliderInit = function() {
 		slides[0].classList.add("slide-show");
 		toggles[0].classList.toggle("slider-toogle-current");
