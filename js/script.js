@@ -71,7 +71,7 @@ if(typeof(login) != "undefined" && login !== null) {
 }	
 
 // Блок feedback
-var feedback = document.querySelector(".button-feedback");
+var feedbackButton = document.querySelector(".button-feedback");
 var popup = document.querySelector(".modal-feedback");
 var close = document.querySelector(".modal-close");
 
@@ -80,7 +80,7 @@ if(typeof(popup) != "undefined" && popup !== null) {
 	var feedbackName = popup.querySelector("[name=name]");
 	var feedbackEmail = popup.querySelector("[name=email]");
 
-	feedback.addEventListener("click", function(evt) {
+	feedbackButton.addEventListener("click", function(evt) {
 		evt.preventDefault();
 		overlay.classList.add("overlay-show");
 		popup.classList.add("modal-show");
